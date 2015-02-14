@@ -26,27 +26,35 @@
 
 // Saves options.
 function rmc_save_options() {
-	var getConfirm = document.getElementById('enableConfirm').checked;
-		chrome.storage.sync.set({
-			confirmRestart: getConfirm
-	}, function() {
-    // Update status to let user know options were saved.
-    var status = document.getElementById('status');
-    status.textContent = 'Updated';
-    setTimeout(function() {
-		status.textContent = '';
-		window.close();
-    }, 550);
-  });
+	try{	
+		var getConfirm = document.getElementById('enableConfirm').checked;
+			chrome.storage.sync.set({
+				confirmRestart: getConfirm
+		}, function() {
+		// Update status to let user know options were saved.
+		var status = document.getElementById('status');
+		status.textContent = 'Updated';
+		setTimeout(function() {
+			status.textContent = '';
+			window.close();
+		}, 550);
+	  });
+	}catch (e){
+		alert("An error was encountered while attempting to save settings! " + e);					
+	} 
 }
 
 // Restores saved options.
 function rmc_restore_options() {
-	chrome.storage.sync.get({
-		confirmRestart: true
-	}, function(key) {	  
-		document.getElementById('enableConfirm').checked = key.confirmRestart;
-  });
+	try{		
+		chrome.storage.sync.get({
+			confirmRestart: true
+		}, function(key) {	  
+			document.getElementById('enableConfirm').checked = key.confirmRestart;
+	  });
+	}catch (e){
+		alert("An error was encountered while attempting to restore settings! " + e);					
+	}   
 }
 
 document.addEventListener('DOMContentLoaded', rmc_restore_options);

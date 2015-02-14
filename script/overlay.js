@@ -27,14 +27,18 @@
 	chrome.browserAction.onClicked.addListener(function(activeTab){
 		chrome.storage.sync.get({
 				confirmRestart: true
-		}, function(key) {	  
-		var RestartURI = "chrome://restart";	
-		if (key.confirmRestart === true){			
-			if (confirm("Do you really want to restart?")){
+		}, function(key) {
+		try{			
+			var RestartURI = "chrome://restart";	
+			if (key.confirmRestart === true){			
+				if (confirm("Do you really want to restart?")){
+					chrome.tabs.create({ url: RestartURI });
+				}	
+			}else{
 				chrome.tabs.create({ url: RestartURI });
-			}	
-		}else{
-			chrome.tabs.create({ url: RestartURI });
-		}	
+			}
+		}catch (e){
+			alert("An error was encountered while attempting to restart browser! " + e);					
+		}		
 	});			
 });
