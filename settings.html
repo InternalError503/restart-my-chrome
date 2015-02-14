@@ -1,5 +1,5 @@
-//Restart my fox now has a chrome version: restart my chrome.
-	/*
+<!DOCTYPE html>
+	<!--
 
 		The MIT License (MIT)
 
@@ -23,18 +23,23 @@
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 		THE SOFTWARE.
 
-	*/
-	chrome.browserAction.onClicked.addListener(function(activeTab){
-		chrome.storage.sync.get({
-				confirmRestart: true
-		}, function(key) {	  
-		var RestartURI = "chrome://restart";	
-		if (key.confirmRestart === true){			
-			if (confirm("Do you really want to restart?")){
-				chrome.tabs.create({ url: RestartURI });
-			}	
-		}else{
-			chrome.tabs.create({ url: RestartURI });
-		}	
-	});			
-});
+	-->
+<html>
+	<head>
+		<title>Restart My Chrome Options</title>
+	  <style>
+		body: { padding: 10px; }
+	  </style>
+	</head>
+<body>
+	<h1>Confirmations:<h2>
+	<label>
+			<input type="checkbox" id="enableConfirm">Enable restart confirmation.</input>
+	</label>
+	<br/><br/>
+		<div id="saveContaner">
+			<button id="save">Save Changes</button> <span id="status"></span>
+		</div>
+<script src="script/settings.js"></script>
+</body>
+</html>

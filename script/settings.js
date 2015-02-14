@@ -1,4 +1,3 @@
-//Restart my fox now has a chrome version: restart my chrome.
 	/*
 
 		The MIT License (MIT)
@@ -24,17 +23,31 @@
 		THE SOFTWARE.
 
 	*/
-	chrome.browserAction.onClicked.addListener(function(activeTab){
-		chrome.storage.sync.get({
-				confirmRestart: true
-		}, function(key) {	  
-		var RestartURI = "chrome://restart";	
-		if (key.confirmRestart === true){			
-			if (confirm("Do you really want to restart?")){
-				chrome.tabs.create({ url: RestartURI });
-			}	
-		}else{
-			chrome.tabs.create({ url: RestartURI });
-		}	
-	});			
-});
+
+// Saves options.
+function rmc_save_options() {
+	var getConfirm = document.getElementById('enableConfirm').checked;
+		chrome.storage.sync.set({
+			confirmRestart: getConfirm
+	}, function() {
+    // Update status to let user know options were saved.
+    var status = document.getElementById('status');
+    status.textContent = 'Updated';
+    setTimeout(function() {
+		status.textContent = '';
+		window.close();
+    }, 550);
+  });
+}
+
+// Restores saved options.
+function rmc_restore_options() {
+	chrome.storage.sync.get({
+		confirmRestart: true
+	}, function(key) {	  
+		document.getElementById('enableConfirm').checked = key.confirmRestart;
+  });
+}
+
+document.addEventListener('DOMContentLoaded', rmc_restore_options);
+document.getElementById('save').addEventListener('click', rmc_save_options);

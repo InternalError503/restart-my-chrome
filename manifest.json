@@ -1,7 +1,13 @@
 {
-		"description": "Allows users to easily restart the web browser.",
-		"manifest_version": 2,
-		"name": "Restart My Chrome",	
+	"description": "Allows users to easily restart the web browser.",
+	"manifest_version": 2,
+	"name": "Restart My Chrome",
+		
+	"options_ui": {
+		"page": "settings.html",
+		"chrome_style": true
+	  },		
+		
 	"icons": { 
 			"16" : "images/icon16.png",
 			"48" : "images/icon48.png",
@@ -16,6 +22,6 @@
 	"background": {
       "scripts": [ "script/overlay.js" ]
 	},
-		"permissions": [ "tabs", "notifications", "browsingData" ],
-		"version": "1.0"
+		"permissions": [ "tabs", "notifications", "browsingData", "storage" ],
+		"version": "1.1"
 }
