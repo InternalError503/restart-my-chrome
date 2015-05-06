@@ -22,3 +22,26 @@ Allows users to easily restart `Chrome web browser`
 
 ### History:
 We brought you [restart my fox] (https://addons.mozilla.org/en-US/firefox/addon/restart-my-fox), Now we bring you [restart my chrome] (https://chrome.google.com/webstore/detail/restart-my-chrome/poifblphedfakpplnemomhgkhhpkpkla).
+
+### Clear Browser Data:
+
+| Setting | Function |
+------------- | -------------
+Clear AppCache | Clears applications cache
+Clear Cache | Clears cache files
+Clear Cookies | Clears stored\save session cookies
+Clear Downloads | Clears downloads history
+Clear FileSystems | Clears part of HTML5 local storage
+Clear FormData | Clears any entered form data (i.e name or email)
+Clear History | Clears browsers history 
+Clear indexedDB | indexedDB is used to store structured data.
+Clear LocalStorage | Clears local HTML5 storage.
+Clear PluginData | Clears any information stored by plugins
+Clear Passwords | Clears any saved or stored passwords.
+Clear webSQL | Used by chrome for storing structured data
+
+####Disclaimer
+The __Clear Browser Data__ feature is use at own risk, If you use this feature then you understand
+the risk that it permanently deletes this data, What data does it cover [see](#clear-browser-data)
+
+Can any of the data be recovered once delete, __No it permanently deletes this data__.
