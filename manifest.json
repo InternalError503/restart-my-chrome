@@ -23,5 +23,5 @@
       "scripts": [ "script/overlay.js" ]
 	},
 		"permissions": [ "tabs", "notifications", "browsingData", "storage" ],
-		"version": "1.1"
+		"version": "1.2"
 }
