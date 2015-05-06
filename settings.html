@@ -28,14 +28,32 @@
 	<head>
 		<title>Restart My Chrome Options</title>
 	  <style>
-		body: { padding: 10px; }
+		body { font-size:16px; }
+		#browserDataListItems li { list-style:none; margin-left:-40px;}
 	  </style>
 	</head>
 <body>
-	<h1>Confirmations:<h2>
-	<label>
-			<input type="checkbox" id="enableConfirm">Enable restart confirmation.</input>
-	</label>
+	<h1>Confirmations:</h1>
+	<label><input type="checkbox" id="enableConfirm"/>Enable restart confirmation.</label>
+	<h1>Browsing Data:</h1>
+	<label><input type="checkbox" id="enableClearingData"/>Enable clearing of browser data.</label>
+	<label><a id="showDataOptions">Show Options.</a></label>
+<div id="browserDataList" hidden="true">	
+		<ul id="browserDataListItems">	
+			<li><label><input type="checkbox" id="dataAppCache"/>Clear AppCache.</label></li>
+			<li><label><input type="checkbox" id="dataCache"/>Clear Cache.</label></li>
+			<li><label><input type="checkbox" id="dataCookies"/>Clear Cookies.</label></li>
+			<li><label><input type="checkbox" id="dataDownloads"/>Clear Downloads.</label></li>
+			<li><label><input type="checkbox" id="dataFileSystems"/>Clear File Systems.</label></li>
+			<li><label><input type="checkbox" id="dataFormData"/>Clear Form Data.</label></li>
+			<li><label><input type="checkbox" id="dataHistory"/>Clear History.</label></li>
+			<li><label><input type="checkbox" id="dataIndexedDB"/>Clear IndexedDB.</label></li>
+			<li><label><input type="checkbox" id="dataLocalStorage"/>Clear Local Storage.</label></li>
+			<li><label><input type="checkbox" id="dataPluginData"/>Clear Plugin Data.</label></li>
+			<li><label><input type="checkbox" id="dataPasswords"/>Clear Passwords.</label></li>
+			<li><label><input type="checkbox" id="dataWebSQL"/>Clear WebSQL.</label></li>		
+		</ul>
+</div>		
 	<br/><br/>
 		<div id="saveContaner">
 			<button id="save">Save Changes</button> <span id="status"></span>
