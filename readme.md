@@ -18,6 +18,7 @@ Allows users to easily restart `Chrome web browser`
 
 ### Features:
 - Enable restart confirmation.
+- Clear browser data.
 
 ### History:
 We brought you [restart my fox] (https://addons.mozilla.org/en-US/firefox/addon/restart-my-fox), Now we bring you [restart my chrome] (https://chrome.google.com/webstore/detail/restart-my-chrome/poifblphedfakpplnemomhgkhhpkpkla).
