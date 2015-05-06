@@ -1,0 +1,90 @@
+{
+  "appName": {
+    "message": "Restart My Chrome",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "Allows users to easily restart the web browser.", 
+    "description":"The description of the application, displayed in the web store."
+  },
+  "appOptionsConfirmations": {
+    "message": "Confirmations:", 
+    "description":"Confirmations label"
+  },
+  "appOptionsEnableConfirm": {
+    "message": "Enable restart confirmation.", 
+    "description":"Text for enable confirmation on restart."
+  },
+  "appOptionsClearData": {
+    "message": "Browsing Data:", 
+    "description":"Browsing Data Label"
+  },
+  "appOptionsEnableClearData": {
+    "message": "Enable clearing of browser data.", 
+    "description":"Text for enable clearing of browser data."
+  },
+  "appOptionsShowOptions": {
+    "message": "Show Options.", 
+    "description":"Show options label"
+  },
+  "appOptionsHideOptions": {
+    "message": "Hide Options.", 
+    "description":"Hide options label"
+  },
+  "appOptionsSave": {
+    "message": "Save Changes", 
+    "description":"Save settings button."
+  },
+  "appOptionsStatus": {
+    "message": "Updated", 
+    "description":"Save settings status message"
+  },
+  "appOptionsAppCache": {
+    "message": "Clear AppCache.", 
+    "description":"label for clear appcache"
+  },
+  "appOptionsCache": {
+    "message": "Clear Cache.", 
+    "description":"label for clear cache"
+  },
+  "appOptionsCookies": {
+    "message": "Clear Cookies.", 
+    "description":"label for clear cookies"
+  },
+  "appOptionsDownloads": {
+    "message": "Clear Downloads.", 
+    "description":"label for clear downloads"
+  },
+  "appOptionsFileSystems": {
+    "message": "Clear File Systems.", 
+    "description":"label for clear file systems"
+  },
+  "appOptionsFormData": {
+    "message": "Clear Form Data.", 
+    "description":"label for clear form data"
+  },
+  "appOptionsHistory": {
+    "message": "Clear History.", 
+    "description":"label for clear history"
+  },
+  "appOptionsIndexedDB": {
+    "message": "Clear IndexedDB.", 
+    "description":"label for clear indexeddb"
+  },
+  "appOptionsLocalStorage": {
+    "message": "Clear Local Storage.", 
+    "description":"label for clear local storage"
+  },
+  "appOptionsPluginData": {
+    "message": "Clear Plugin Data.", 
+    "description":"label for clear plugin data"
+  },
+  "appOptionsPasswords": {
+    "message": "Clear Passwords.", 
+    "description":"label for clear passwords"
+  },
+  "appOptionsWebSQL": {
+    "message": "Clear WebSQL.", 
+    "description":"label for clear websql."
+  }
+}

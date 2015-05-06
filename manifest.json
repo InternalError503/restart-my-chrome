@@ -1,7 +1,8 @@
 {
-	"description": "Allows users to easily restart the web browser.",
+	"description": "__MSG_appDesc__",
 	"manifest_version": 2,
-	"name": "Restart My Chrome",
+	"name": "__MSG_appName__",
+	"default_locale": "en",
 		
 	"options_ui": {
 		"page": "settings.html",
@@ -16,7 +17,7 @@
 			"512": "images/icon512.png"			
 	},		
 	"browser_action": {
-		"default_title": "Restart My Chrome",	
+		"default_title": "__MSG_appName__",	
 		"default_icon": "images/icon512.png"
 	},		
 	"background": {

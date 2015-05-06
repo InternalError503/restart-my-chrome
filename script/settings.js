@@ -24,6 +24,30 @@
 
 	*/
 
+//Load up localised content	
+function init(){
+	document.getElementById('confirmHeading').textContent = chrome.i18n.getMessage("appOptionsConfirmations");
+    document.getElementById('confirmLabel').textContent = chrome.i18n.getMessage("appOptionsEnableConfirm");	
+    document.getElementById('browsingDataHeading').textContent = chrome.i18n.getMessage("appOptionsClearData");
+    document.getElementById('clearDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableClearData");
+    document.getElementById('showDataOptions').textContent = chrome.i18n.getMessage("appOptionsShowOptions");
+    document.getElementById('save').textContent = chrome.i18n.getMessage("appOptionsSave");
+	
+    document.getElementById('dataAppCacheLabel').textContent = chrome.i18n.getMessage("appOptionsAppCache");
+    document.getElementById('dataCacheLabel').textContent = chrome.i18n.getMessage("appOptionsCache");
+    document.getElementById('dataCookiesLabel').textContent = chrome.i18n.getMessage("appOptionsCookies");
+    document.getElementById('dataDownloadsLabel').textContent = chrome.i18n.getMessage("appOptionsDownloads");
+    document.getElementById('dataFileSystemsLabel').textContent = chrome.i18n.getMessage("appOptionsFileSystems");
+    document.getElementById('dataFormDataLabel').textContent = chrome.i18n.getMessage("appOptionsFormData");
+    document.getElementById('dataHistoryLabel').textContent = chrome.i18n.getMessage("appOptionsHistory");
+    document.getElementById('dataIndexedDBLabel').textContent = chrome.i18n.getMessage("appOptionsIndexedDB");
+    document.getElementById('dataLocalStorageLabel').textContent = chrome.i18n.getMessage("appOptionsLocalStorage");
+    document.getElementById('dataPluginDataLabel').textContent = chrome.i18n.getMessage("appOptionsPluginData");
+    document.getElementById('dataPasswordsLabel').textContent = chrome.i18n.getMessage("appOptionsPasswords");
+    document.getElementById('dataWebSQLLabel').textContent = chrome.i18n.getMessage("appOptionsWebSQL");	
+    	
+	rmc_restore_options();
+}	
 // Saves options.
 function rmc_save_options() {
 	try{	
@@ -44,8 +68,7 @@ function rmc_save_options() {
 				clearAllDatadataWebSQL: document.getElementById('dataWebSQL').checked
 		}, function() {
 		// Update status to let user know options were saved.
-		var status = document.getElementById('status');
-		status.textContent = 'Updated';
+		document.getElementById('status').textContent = chrome.i18n.getMessage("appOptionsStatus");
 		setTimeout(function() {
 			status.textContent = '';
 			window.close();
@@ -58,6 +81,7 @@ function rmc_save_options() {
 
 // Restores saved options.
 function rmc_restore_options() {
+	
 	try{		
 		chrome.storage.sync.get({
 			confirmRestart: false,
@@ -101,16 +125,16 @@ function rmc_showdata_options() {
        var toggle = document.getElementById('browserDataList');
        if(toggle.hidden === true){
           toggle.hidden = false;
-		  document.getElementById('showDataOptions').textContent = "Hide Options";
+		  document.getElementById('showDataOptions').textContent = chrome.i18n.getMessage("appOptionsHideOptions");
        }else{
           toggle.hidden = true;
-		  document.getElementById('showDataOptions').textContent = "Show Options";		  
+		  document.getElementById('showDataOptions').textContent = chrome.i18n.getMessage("appOptionsShowOptions");		  
 	   }	
 	}catch (e){
 		alert("An error was encountered while to show browserDataList! " + e);					
 	}
 }	
 
-document.addEventListener('DOMContentLoaded', rmc_restore_options);
+document.addEventListener('DOMContentLoaded', init);
 document.getElementById('save').addEventListener('click', rmc_save_options);
 document.getElementById('showDataOptions').addEventListener('click', rmc_showdata_options);

@@ -33,25 +33,25 @@
 	  </style>
 	</head>
 <body>
-	<h1>Confirmations:</h1>
-	<label><input type="checkbox" id="enableConfirm"/>Enable restart confirmation.</label>
-	<h1>Browsing Data:</h1>
-	<label><input type="checkbox" id="enableClearingData"/>Enable clearing of browser data.</label>
-	<label><a id="showDataOptions">Show Options.</a></label>
+	<h1 id="confirmHeading">Confirmations:</h1>
+	<input type="checkbox" id="enableConfirm"/><span id="confirmLabel">Enable restart confirmation.</span>
+	<h1 id="browsingDataHeading">Browsing Data:</h1>
+	<input type="checkbox" id="enableClearingData"/><span id="clearDataLabel">Enable clearing of browser data.</span>
+	<a id="showDataOptions">Show Options.</a>
 <div id="browserDataList" hidden="true">	
 		<ul id="browserDataListItems">	
-			<li><label><input type="checkbox" id="dataAppCache"/>Clear AppCache.</label></li>
-			<li><label><input type="checkbox" id="dataCache"/>Clear Cache.</label></li>
-			<li><label><input type="checkbox" id="dataCookies"/>Clear Cookies.</label></li>
-			<li><label><input type="checkbox" id="dataDownloads"/>Clear Downloads.</label></li>
-			<li><label><input type="checkbox" id="dataFileSystems"/>Clear File Systems.</label></li>
-			<li><label><input type="checkbox" id="dataFormData"/>Clear Form Data.</label></li>
-			<li><label><input type="checkbox" id="dataHistory"/>Clear History.</label></li>
-			<li><label><input type="checkbox" id="dataIndexedDB"/>Clear IndexedDB.</label></li>
-			<li><label><input type="checkbox" id="dataLocalStorage"/>Clear Local Storage.</label></li>
-			<li><label><input type="checkbox" id="dataPluginData"/>Clear Plugin Data.</label></li>
-			<li><label><input type="checkbox" id="dataPasswords"/>Clear Passwords.</label></li>
-			<li><label><input type="checkbox" id="dataWebSQL"/>Clear WebSQL.</label></li>		
+			<li><input type="checkbox" id="dataAppCache"/><span id="dataAppCacheLabel">Clear AppCache.</span></li>
+			<li><input type="checkbox" id="dataCache"/><span id="dataCacheLabel">Clear Cache.</span></li>
+			<li><input type="checkbox" id="dataCookies"/><span id="dataCookiesLabel">Clear Cookies.</span></li>
+			<li><input type="checkbox" id="dataDownloads"/><span id="dataDownloadsLabel">Clear Downloads.</span></li>
+			<li><input type="checkbox" id="dataFileSystems"/><span id="dataFileSystemsLabel">Clear File Systems.</span></li>
+			<li><input type="checkbox" id="dataFormData"/><span id="dataFormDataLabel">Clear Form Data.</span></li>
+			<li><input type="checkbox" id="dataHistory"/><span id="dataHistoryLabel">Clear History.</span></li>
+			<li><input type="checkbox" id="dataIndexedDB"/><span id="dataIndexedDBLabel">Clear IndexedDB.</span></li>
+			<li><input type="checkbox" id="dataLocalStorage"/><span id="dataLocalStorageLabel">Clear Local Storage.</span></li>
+			<li><input type="checkbox" id="dataPluginData"/><span id="dataPluginDataLabel">Clear Plugin Data.</span></li>
+			<li><input type="checkbox" id="dataPasswords"/><span id="dataPasswordsLabel">Clear Passwords.</span></li>
+			<li><input type="checkbox" id="dataWebSQL"/><span id="dataWebSQLLabel">Clear WebSQL.</span></li>		
 		</ul>
 </div>		
 	<br/><br/>
