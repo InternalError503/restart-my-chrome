@@ -26,8 +26,8 @@
 	*/
 	chrome.browserAction.onClicked.addListener(function(activeTab){
 		chrome.storage.sync.get({
-				confirmRestart: true,
-				clearAllData: true
+				confirmRestart: false,
+				clearAllData: false
 		}, function(key) {
 		try{			
 			var RestartURI = "chrome://restart";
@@ -59,8 +59,8 @@ function clearAllData(aBoolean, aCallback){
 			  var beginingOfTime = (new Date()).getTime() - clearFrom;
 			 //Get user settings for what to clear 
 			chrome.storage.sync.get({
-					confirmRestart: true,
-					clearAllData: true,
+					confirmRestart: false,
+					clearAllData: false,
 					clearAllDataAppCache: true,
 					clearAllDataCache: true,
 					clearAllDataCookies: true,
