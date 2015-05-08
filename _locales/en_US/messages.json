@@ -86,5 +86,9 @@
   "appOptionsWebSQL": {
     "message": "Clear WebSQL.", 
     "description":"label for clear websql."
+  },
+  "appOptionsDisclaimer": {
+    "message": "The (Clear Browser Data) feature is use at own risk, If you use this feature then you understand the risk that it permanently deletes this data, What data does it cover", 
+    "description":"Disclaimer Message"
   }
 }

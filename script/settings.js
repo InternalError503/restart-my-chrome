@@ -32,7 +32,6 @@ function init(){
     document.getElementById('clearDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableClearData");
     document.getElementById('showDataOptions').textContent = chrome.i18n.getMessage("appOptionsShowOptions");
     document.getElementById('save').textContent = chrome.i18n.getMessage("appOptionsSave");
-	
     document.getElementById('dataAppCacheLabel').textContent = chrome.i18n.getMessage("appOptionsAppCache");
     document.getElementById('dataCacheLabel').textContent = chrome.i18n.getMessage("appOptionsCache");
     document.getElementById('dataCookiesLabel').textContent = chrome.i18n.getMessage("appOptionsCookies");
@@ -44,8 +43,8 @@ function init(){
     document.getElementById('dataLocalStorageLabel').textContent = chrome.i18n.getMessage("appOptionsLocalStorage");
     document.getElementById('dataPluginDataLabel').textContent = chrome.i18n.getMessage("appOptionsPluginData");
     document.getElementById('dataPasswordsLabel').textContent = chrome.i18n.getMessage("appOptionsPasswords");
-    document.getElementById('dataWebSQLLabel').textContent = chrome.i18n.getMessage("appOptionsWebSQL");	
-    	
+    document.getElementById('dataWebSQLLabel').textContent = chrome.i18n.getMessage("appOptionsWebSQL");
+    document.getElementById('disclaimer').textContent = chrome.i18n.getMessage("appOptionsDisclaimer");  	
 	rmc_restore_options();
 }	
 // Saves options.
