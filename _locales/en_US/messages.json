@@ -98,5 +98,13 @@
   "appOptionsDisclaimer": {
     "message": "The (Clear Browser Data) feature is use at own risk, If you use this feature then you understand the risk that it permanently deletes this data, What data does it cover", 
     "description":"Disclaimer Message"
+  },
+  "appRestartConfrim": {
+    "message": "Do you really want to restart?", 
+    "description":"Test for restart confirmation"
+  },
+  "appRestartConfrimData": {
+    "message": "Do you really want clear all data & restart?", 
+    "description":"Test for clear data restart confirmation"
   }
 }

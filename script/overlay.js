@@ -38,7 +38,7 @@
 			if (key.clearAllData === true){
 				clearAllData(true, callback, key.confirmDataRestart);
 			}else if (key.confirmRestart === true){			
-					if (confirm("Do you really want to restart?")){
+					if (confirm(chrome.i18n.getMessage("appRestartConfrim"))){
 							chrome.tabs.create({ url: RestartURI });
 					}	
 				}else{
@@ -92,7 +92,7 @@ function clearAllData(aBoolean, aCallback, aConfirm){
 		}
 	//Check if users want a confirmation	
 	if (aConfirm === true){	
-		if (aBoolean === true && confirm("Do you really want clear all data & restart?")){									
+		if (aBoolean === true && confirm(chrome.i18n.getMessage("appRestartConfrimData"))){									
 			clear();
 		}
 	}else{
