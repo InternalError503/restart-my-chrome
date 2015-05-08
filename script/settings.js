@@ -44,6 +44,7 @@ function init(){
     document.getElementById('dataPluginDataLabel').textContent = chrome.i18n.getMessage("appOptionsPluginData");
     document.getElementById('dataPasswordsLabel').textContent = chrome.i18n.getMessage("appOptionsPasswords");
     document.getElementById('dataWebSQLLabel').textContent = chrome.i18n.getMessage("appOptionsWebSQL");
+    document.getElementById('learnMore').textContent = chrome.i18n.getMessage("appOptionsLearnMore");
     document.getElementById('disclaimer').textContent = chrome.i18n.getMessage("appOptionsDisclaimer");  	
 	rmc_restore_options();
 }	
