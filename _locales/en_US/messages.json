@@ -15,6 +15,10 @@
     "message": "Enable restart confirmation.", 
     "description":"Text for enable confirmation on restart."
   },
+  "appOptionsEnableConfirmData": {
+    "message": "Enable clear data restart confirmation.", 
+    "description":"Text for enable confirmation on clear data restart."
+  },
   "appOptionsClearData": {
     "message": "Browsing Data:", 
     "description":"Browsing Data Label"

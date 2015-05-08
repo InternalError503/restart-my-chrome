@@ -3,7 +3,7 @@
 
 		The MIT License (MIT)
 
-		Copyright (c) 2014 8pecxstudios.com 
+		Copyright (c) 2015 8pecxstudios.com 
 
 		Permission is hereby granted, free of charge, to any person obtaining a copy
 		of this software and associated documentation files (the "Software"), to deal
@@ -27,6 +27,7 @@
 	chrome.browserAction.onClicked.addListener(function(activeTab){
 		chrome.storage.sync.get({
 				confirmRestart: false,
+				confirmDataRestart: true,
 				clearAllData: false
 		}, function(key) {
 		try{			
@@ -35,7 +36,7 @@
 				chrome.tabs.create({ url: RestartURI });
 			};
 			if (key.clearAllData === true){
-				clearAllData(true, callback);
+				clearAllData(true, callback, key.confirmDataRestart);
 			}else if (key.confirmRestart === true){			
 					if (confirm("Do you really want to restart?")){
 							chrome.tabs.create({ url: RestartURI });
@@ -50,16 +51,14 @@
 });
 
 //Clear browser data
-function clearAllData(aBoolean, aCallback){
+function clearAllData(aBoolean, aCallback, aConfirm){
 		
-	if (aBoolean === true && confirm("Do you really want clear all data & restart?")){	
 		var clear = function () {
 			  //Set time to 365 days so it clears from forever, ToDo add option to select when to clear from.
 			  var clearFrom = (new Date()).getTime() - (1000 * 60 * 60 * 24 * 7 * 52);
 			  var beginingOfTime = (new Date()).getTime() - clearFrom;
 			 //Get user settings for what to clear 
 			chrome.storage.sync.get({
-					confirmRestart: false,
 					clearAllData: false,
 					clearAllDataAppCache: true,
 					clearAllDataCache: true,
@@ -90,7 +89,14 @@ function clearAllData(aBoolean, aCallback){
 						"webSQL": key.clearAllDatadataWebSQL
 					}, aCallback);
 				});
-		}								
+		}
+	//Check if users want a confirmation	
+	if (aConfirm === true){	
+		if (aBoolean === true && confirm("Do you really want clear all data & restart?")){									
+			clear();
+		}
+	}else{
 		clear();
 	}
+	
 }	

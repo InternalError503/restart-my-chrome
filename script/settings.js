@@ -2,7 +2,7 @@
 
 		The MIT License (MIT)
 
-		Copyright (c) 2014 8pecxstudios.com 
+		Copyright (c) 2015 8pecxstudios.com 
 
 		Permission is hereby granted, free of charge, to any person obtaining a copy
 		of this software and associated documentation files (the "Software"), to deal
@@ -30,6 +30,7 @@ function init(){
     document.getElementById('confirmLabel').textContent = chrome.i18n.getMessage("appOptionsEnableConfirm");	
     document.getElementById('browsingDataHeading').textContent = chrome.i18n.getMessage("appOptionsClearData");
     document.getElementById('clearDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableClearData");
+    document.getElementById('confirmDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableConfirmData");
     document.getElementById('showDataOptions').textContent = chrome.i18n.getMessage("appOptionsShowOptions");
     document.getElementById('save').textContent = chrome.i18n.getMessage("appOptionsSave");
     document.getElementById('dataAppCacheLabel').textContent = chrome.i18n.getMessage("appOptionsAppCache");
@@ -45,7 +46,7 @@ function init(){
     document.getElementById('dataPasswordsLabel').textContent = chrome.i18n.getMessage("appOptionsPasswords");
     document.getElementById('dataWebSQLLabel').textContent = chrome.i18n.getMessage("appOptionsWebSQL");
     document.getElementById('learnMore').textContent = chrome.i18n.getMessage("appOptionsLearnMore");
-    document.getElementById('disclaimer').textContent = chrome.i18n.getMessage("appOptionsDisclaimer");  	
+    document.getElementById('disclaimer').textContent = chrome.i18n.getMessage("appOptionsDisclaimer");	
 	rmc_restore_options();
 }	
 // Saves options.
@@ -53,6 +54,7 @@ function rmc_save_options() {
 	try{	
 			chrome.storage.sync.set({
 				confirmRestart: document.getElementById('enableConfirm').checked,
+				confirmDataRestart: document.getElementById('enableConfirmData').checked,
 				clearAllData: document.getElementById('enableClearingData').checked,
 				clearAllDataAppCache: document.getElementById('dataAppCache').checked,
 				clearAllDataCache: document.getElementById('dataCache').checked,
@@ -85,6 +87,7 @@ function rmc_restore_options() {
 	try{		
 		chrome.storage.sync.get({
 			confirmRestart: false,
+			confirmDataRestart: true,
 			clearAllData: false,
 			clearAllDataAppCache: true,
 			clearAllDataCache: true,
@@ -100,6 +103,7 @@ function rmc_restore_options() {
 			clearAllDatadataWebSQL: true
 		}, function(key) {	  
 			document.getElementById('enableConfirm').checked = key.confirmRestart;
+			document.getElementById('enableConfirmData').checked = key.confirmDataRestart;
 			document.getElementById('enableClearingData').checked = key.clearAllData;			
 			document.getElementById('dataAppCache').checked = key.clearAllDataAppCache;
 			document.getElementById('dataCache').checked = key.clearAllDataCache;
