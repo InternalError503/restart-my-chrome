@@ -44,4 +44,4 @@ Clear webSQL | Used by chrome for storing structured data
 The __Clear Browser Data__ feature is use at own risk, If you use this feature then you understand
 the risk that it permanently deletes this data, What data does it cover [see](#clear-browser-data)
 
-Can any of the data be recovered once delete, __No it permanently deletes this data__.
+Can any of the data be recovered once deleted, __No it permanently deletes this data__.
