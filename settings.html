@@ -39,7 +39,15 @@
 	<h1 id="browsingDataHeading">Browsing Data:</h1>
 	<input type="checkbox" id="enableClearingData"/><span id="clearDataLabel">Enable clearing of browser data.</span>
 	<a id="showDataOptions">Show Options.</a>
-<div id="browserDataList" hidden="true">	
+<div id="browserDataList" hidden="true"><br/>
+	<span id="clearDataFromHeading">Clear the following data from:</span>
+	<select id="clearDataFrom">
+		  <option id="hour" value="hour">the past hour</option>
+		  <option id="day"  value="day">the past day</option>
+		  <option id="week"  value="week">the past week</option>
+		  <option id="month"  value="month">the last 4 weeks</option>
+		  <option id="forever" value="forever">the beginning of time</option>
+	</select><br/>
 		<ul id="browserDataListItems">	
 			<li><input type="checkbox" id="dataAppCache"/><span id="dataAppCacheLabel">Clear AppCache.</span></li>
 			<li><input type="checkbox" id="dataCache"/><span id="dataCacheLabel">Clear Cache.</span></li>

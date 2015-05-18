@@ -43,6 +43,30 @@
     "message": "Updated", 
     "description":"Save settings status message"
   },
+  "appOptionsclearDataFromHeading": {
+    "message": "Clear the following data from:", 
+    "description":"label for clear data from select menu"
+  },  
+  "appOptionsDataFromHour": {
+    "message": "the past hour", 
+    "description":"Select menu hour."
+  }, 
+   "appOptionsDataFromDay": {
+    "message": "the past day", 
+    "description":"Select menu day."
+  },  
+  "appOptionsDataFromWeek": {
+    "message": "the past week", 
+    "description":"Select menu week."
+  },   
+  "appOptionsDataFromMonth": {
+    "message": "the last 4 weeks", 
+    "description":"Select menu Month."
+  }, 
+   "appOptionsDataFromForever": {
+    "message": "the beginning of time", 
+    "description":"Select menu forever."
+  }, 
   "appOptionsAppCache": {
     "message": "Clear AppCache.", 
     "description":"label for clear appcache"

@@ -31,7 +31,13 @@
 	        document.getElementById('clearDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableClearData");
 	        document.getElementById('confirmDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableConfirmData");
 	        document.getElementById('showDataOptions').textContent = chrome.i18n.getMessage("appOptionsShowOptions");
-	        document.getElementById('save').textContent = chrome.i18n.getMessage("appOptionsSave");
+	        document.getElementById('save').textContent = chrome.i18n.getMessage("appOptionsSave");			
+			document.getElementById('clearDataFromHeading').textContent = chrome.i18n.getMessage("appOptionsclearDataFromHeading");
+			document.getElementById('hour').textContent = chrome.i18n.getMessage("appOptionsDataFromHour");
+			document.getElementById('day').textContent = chrome.i18n.getMessage("appOptionsDataFromDay");
+			document.getElementById('week').textContent = chrome.i18n.getMessage("appOptionsDataFromWeek");
+			document.getElementById('month').textContent = chrome.i18n.getMessage("appOptionsDataFromMonth");
+			document.getElementById('forever').textContent = chrome.i18n.getMessage("appOptionsDataFromForever");		
 	        document.getElementById('dataAppCacheLabel').textContent = chrome.i18n.getMessage("appOptionsAppCache");
 	        document.getElementById('dataCacheLabel').textContent = chrome.i18n.getMessage("appOptionsCache");
 	        document.getElementById('dataCookiesLabel').textContent = chrome.i18n.getMessage("appOptionsCookies");
@@ -56,6 +62,7 @@
 	        chrome.storage.sync.set({
 	            confirmRestart: document.getElementById('enableConfirm').checked,
 	            confirmDataRestart: document.getElementById('enableConfirmData').checked,
+				clearDataFrom: document.getElementById('clearDataFrom').value,
 	            clearAllData: document.getElementById('enableClearingData').checked,
 	            clearAllDataAppCache: document.getElementById('dataAppCache').checked,
 	            clearAllDataCache: document.getElementById('dataCache').checked,
@@ -89,6 +96,7 @@
 	        chrome.storage.sync.get({
 	            confirmRestart: false,
 	            confirmDataRestart: true,
+				clearDataFrom: "hour",
 	            clearAllData: false,
 	            clearAllDataAppCache: true,
 	            clearAllDataCache: true,
@@ -105,6 +113,7 @@
 	        }, function(key) {
 	            document.getElementById('enableConfirm').checked = key.confirmRestart;
 	            document.getElementById('enableConfirmData').checked = key.confirmDataRestart;
+				document.getElementById('clearDataFrom').value = key.clearDataFrom;
 	            document.getElementById('enableClearingData').checked = key.clearAllData;
 	            document.getElementById('dataAppCache').checked = key.clearAllDataAppCache;
 	            document.getElementById('dataCache').checked = key.clearAllDataCache;

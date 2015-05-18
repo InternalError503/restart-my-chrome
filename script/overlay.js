@@ -28,6 +28,7 @@ chrome.browserAction.onClicked.addListener(function(activeTab) {
     chrome.storage.sync.get({
         confirmRestart: false,
         confirmDataRestart: true,
+		clearDataFrom: "hour",
         clearAllData: false
     }, function(key) {
         try {
@@ -38,7 +39,27 @@ chrome.browserAction.onClicked.addListener(function(activeTab) {
                 });
             };
             if (key.clearAllData === true) {
-                clearAllData(true, callback, key.confirmDataRestart);
+				
+				var clearFrom;
+				switch (key.clearDataFrom){
+					case "hour": 
+					clearFrom = (new Date()).setHours(new Date().getHours() - 1);
+					break;
+					case "day": 
+					clearFrom = (new Date()).setHours(new Date().getHours() - 24);
+					break;
+					case "week": 
+					clearFrom = (new Date()).setDate(new Date().getDate() - 7);
+					break;
+					case "month": 
+					clearFrom = (new Date()).setDate(new Date().getDate() - 28);
+					break;
+					case "forever": 
+					clearFrom = (new Date()).getTime() - (1000 * 60 * 60 * 24 * 7 * 52);
+					break;					
+				}	
+				if (clearFrom === ""){return;}	
+                clearAllData(true, callback, key.confirmDataRestart, clearFrom);
             } else if (key.confirmRestart === true) {
                 if (confirm(chrome.i18n.getMessage("appRestartConfrim"))) {
                     chrome.tabs.create({
@@ -57,12 +78,9 @@ chrome.browserAction.onClicked.addListener(function(activeTab) {
 });
 
 //Clear browser data
-function clearAllData(aBoolean, aCallback, aConfirm) {
+function clearAllData(aBoolean, aCallback, aConfirm, aFrom) {
 
     var clear = function() {
-            //Set time to 365 days so it clears from forever, ToDo add option to select when to clear from.
-            var clearFrom = (new Date()).getTime() - (1000 * 60 * 60 * 24 * 7 * 52);
-            var beginingOfTime = (new Date()).getTime() - clearFrom;
             //Get user settings for what to clear 
             chrome.storage.sync.get({
                 clearAllData: false,
@@ -81,7 +99,7 @@ function clearAllData(aBoolean, aCallback, aConfirm) {
             }, function(key) {
                 //Clear data based on user settings.
                 chrome.browsingData.remove({
-                    "since": beginingOfTime
+                    "since": aFrom
                 }, {
                     "appcache": key.clearAllDataAppCache,
                     "cache": key.clearAllDataCache,
