@@ -26,6 +26,7 @@ We brought you [restart my fox] (https://addons.mozilla.org/en-US/firefox/addon/
 ### Clear Browser Data:
 
 (Clear the following data from) * Option
+
 | Setting | Function |
 ------------- | -------------
 the past hour | Clears from the last hour.
