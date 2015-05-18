@@ -44,6 +44,8 @@
 	        document.getElementById('dataPluginDataLabel').textContent = chrome.i18n.getMessage("appOptionsPluginData");
 	        document.getElementById('dataPasswordsLabel').textContent = chrome.i18n.getMessage("appOptionsPasswords");
 	        document.getElementById('dataWebSQLLabel').textContent = chrome.i18n.getMessage("appOptionsWebSQL");
+			document.getElementById('sAll').textContent = chrome.i18n.getMessage("appOptionsSelectAll");
+			document.getElementById('dAll').textContent = chrome.i18n.getMessage("appOptionsDeSelectAll");
 	        document.getElementById('learnMore').textContent = chrome.i18n.getMessage("appOptionsLearnMore");
 	        document.getElementById('disclaimer').textContent = chrome.i18n.getMessage("appOptionsDisclaimer");
 	        rmc_restore_options();
@@ -137,7 +139,29 @@
 	        alert("An error was encountered while to show browserDataList! " + e);
 	    }
 	}
+	
+	//lets select or deselect all clear data items
+	function rmc_toggledata_options(aToggle) {
+	    try {
+	            document.getElementById('dataAppCache').checked = aToggle;
+	            document.getElementById('dataCache').checked = aToggle;
+	            document.getElementById('dataCookies').checked = aToggle;
+	            document.getElementById('dataDownloads').checked = aToggle;
+	            document.getElementById('dataFileSystems').checked = aToggle;
+	            document.getElementById('dataFormData').checked = aToggle;
+	            document.getElementById('dataHistory').checked = aToggle;
+	            document.getElementById('dataIndexedDB').checked = aToggle;
+	            document.getElementById('dataLocalStorage').checked = aToggle;
+	            document.getElementById('dataPluginData').checked = aToggle;
+	            document.getElementById('dataPasswords').checked = aToggle;
+	            document.getElementById('dataWebSQL').checked = aToggle;
+	    } catch (e) {
+	        console.log("An error was encountered while toggling all data options! " + e);
+	    }
+	}	
 
 	document.addEventListener('DOMContentLoaded', init);
 	document.getElementById('save').addEventListener('click', rmc_save_options);
 	document.getElementById('showDataOptions').addEventListener('click', rmc_showdata_options);
+	document.getElementById('sAll').addEventListener('click', function(){rmc_toggledata_options(true);});
+	document.getElementById('dAll').addEventListener('click', function(){rmc_toggledata_options(false);});

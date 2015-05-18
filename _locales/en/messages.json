@@ -91,6 +91,14 @@
     "message": "Clear WebSQL.", 
     "description":"label for clear websql."
   },
+  "appOptionsSelectAll": {
+    "message": "Select All", 
+    "description":"label for Select All"
+  },
+  "appOptionsDeSelectAll": {
+    "message": "Deselect All", 
+    "description":"label for Deselect All"
+  },
   "appOptionsLearnMore": {
     "message": "Learn More...", 
     "description":"label for Learn More... url"
