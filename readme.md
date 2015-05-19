@@ -19,21 +19,22 @@ Allows users to easily restart `Chrome web browser`
 ### Features:
 - Enable restart confirmation.
 - Clear browser data.
+- Set when to clear data from.
 
 ### History:
 We brought you [restart my fox] (https://addons.mozilla.org/en-US/firefox/addon/restart-my-fox), Now we bring you [restart my chrome] (https://chrome.google.com/webstore/detail/restart-my-chrome/poifblphedfakpplnemomhgkhhpkpkla).
 
 ### Clear Browser Data:
 
-(Clear the following data from) * Option
+(Clear the following data from) period selected.
 
 | Setting | Function |
 ------------- | -------------
-the past hour | Clears from the last hour.
-the past day | Clears from the current day.
-the past week | Clear one week from current time.
-the last 4 weeks | Clear one month from current time.
-the beginning of time | Clears from beginning of time.
+The past hour | Clears from the last hour.
+The past day | Clears from the current day.
+The past week | Clear one week from current time.
+The last 4 weeks | Clear one month from current time.
+The beginning of time | Clears from beginning of time.
 
 
 | Setting | Function |
