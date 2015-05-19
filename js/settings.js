@@ -30,7 +30,6 @@
 	        document.getElementById('browsingDataHeading').textContent = chrome.i18n.getMessage("appOptionsClearData");
 	        document.getElementById('clearDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableClearData");
 	        document.getElementById('confirmDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableConfirmData");
-	        document.getElementById('showDataOptions').textContent = chrome.i18n.getMessage("appOptionsShowOptions");
 	        document.getElementById('save').textContent = chrome.i18n.getMessage("appOptionsSave");			
 			document.getElementById('clearDataFromHeading').textContent = chrome.i18n.getMessage("appOptionsclearDataFromHeading");
 			document.getElementById('hour').textContent = chrome.i18n.getMessage("appOptionsDataFromHour");
@@ -78,11 +77,12 @@
 	            clearAllDatadataWebSQL: document.getElementById('dataWebSQL').checked
 	        }, function() {
 	            // Update status to let user know options were saved.
-	            document.getElementById('status').textContent = chrome.i18n.getMessage("appOptionsStatus");
+				document.getElementById('status').hidden = false;
+	            document.getElementById('statusmsg').textContent = chrome.i18n.getMessage("appOptionsStatus");				
 	            setTimeout(function() {
 	                status.textContent = '';
-	                window.close();
-	            }, 550);
+					document.getElementById('status').hidden = true;
+	            }, 1000);
 	        });
 	    } catch (e) {
 	        alert("An error was encountered while attempting to save settings! " + e);
@@ -133,22 +133,6 @@
 	    }
 	}
 
-	//lets check for change
-	function rmc_showdata_options() {
-	    try {
-	        var toggle = document.getElementById('browserDataList');
-	        if (toggle.hidden === true) {
-	            toggle.hidden = false;
-	            document.getElementById('showDataOptions').textContent = chrome.i18n.getMessage("appOptionsHideOptions");
-	        } else {
-	            toggle.hidden = true;
-	            document.getElementById('showDataOptions').textContent = chrome.i18n.getMessage("appOptionsShowOptions");
-	        }
-	    } catch (e) {
-	        alert("An error was encountered while to show browserDataList! " + e);
-	    }
-	}
-	
 	//lets select or deselect all clear data items
 	function rmc_toggledata_options(aToggle) {
 	    try {
@@ -171,6 +155,5 @@
 
 	document.addEventListener('DOMContentLoaded', init);
 	document.getElementById('save').addEventListener('click', rmc_save_options);
-	document.getElementById('showDataOptions').addEventListener('click', rmc_showdata_options);
 	document.getElementById('sAll').addEventListener('click', function(){rmc_toggledata_options(true);});
 	document.getElementById('dAll').addEventListener('click', function(){rmc_toggledata_options(false);});

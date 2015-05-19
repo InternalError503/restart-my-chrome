@@ -27,48 +27,79 @@
 <html>
 	<head>
 		<title>Restart My Chrome Options</title>
-	  <style>
-		body { font-size:16px; }
-		#browserDataListItems li { list-style:none; margin-left:-40px;}
-	  </style>
+	<link rel="stylesheet"
+			 href="css/custom.css"  
+			 type="text/css" />
+	<link rel="stylesheet"
+			 href="css/uikit.gradient.min.css"  
+			 type="text/css" />
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/uikit.min.js"></script>
 	</head>
 <body>
-	<h1 id="confirmHeading">Confirmations:</h1>
-	<input type="checkbox" id="enableConfirm"/><span id="confirmLabel">Enable restart confirmation.</span><br/>
-	<input type="checkbox" id="enableConfirmData"/><span id="confirmDataLabel">Enable clear data restart confirmation.</span>
-	<h1 id="browsingDataHeading">Browsing Data:</h1>
-	<input type="checkbox" id="enableClearingData"/><span id="clearDataLabel">Enable clearing of browser data.</span>
-	<a id="showDataOptions">Show Options.</a>
-<div id="browserDataList" hidden="true"><br/>
-	<span id="clearDataFromHeading">Clear the following data from:</span>
-	<select id="clearDataFrom">
-		  <option id="hour" value="hour">the past hour</option>
-		  <option id="day"  value="day">the past day</option>
-		  <option id="week"  value="week">the past week</option>
-		  <option id="month"  value="month">the last 4 weeks</option>
-		  <option id="forever" value="forever">the beginning of time</option>
-	</select><br/>
-		<ul id="browserDataListItems">	
-			<li><input type="checkbox" id="dataAppCache"/><span id="dataAppCacheLabel">Clear AppCache.</span></li>
-			<li><input type="checkbox" id="dataCache"/><span id="dataCacheLabel">Clear Cache.</span></li>
-			<li><input type="checkbox" id="dataCookies"/><span id="dataCookiesLabel">Clear Cookies.</span></li>
-			<li><input type="checkbox" id="dataDownloads"/><span id="dataDownloadsLabel">Clear Downloads.</span></li>
-			<li><input type="checkbox" id="dataFileSystems"/><span id="dataFileSystemsLabel">Clear File Systems.</span></li>
-			<li><input type="checkbox" id="dataFormData"/><span id="dataFormDataLabel">Clear Form Data.</span></li>
-			<li><input type="checkbox" id="dataHistory"/><span id="dataHistoryLabel">Clear History.</span></li>
-			<li><input type="checkbox" id="dataIndexedDB"/><span id="dataIndexedDBLabel">Clear IndexedDB.</span></li>
-			<li><input type="checkbox" id="dataLocalStorage"/><span id="dataLocalStorageLabel">Clear Local Storage.</span></li>
-			<li><input type="checkbox" id="dataPluginData"/><span id="dataPluginDataLabel">Clear Plugin Data.</span></li>
-			<li><input type="checkbox" id="dataPasswords"/><span id="dataPasswordsLabel">Clear Passwords.</span></li>
-			<li><input type="checkbox" id="dataWebSQL"/><span id="dataWebSQLLabel">Clear WebSQL.</span></li>
-			<li><a id="sAll">Select all</a> | <a id="dAll">Deselect all</a></li>	
-		</ul>
-		<p><span id="disclaimer">The (Clear Browser Data) feature is use at own risk, If you use this feature then you understand the risk that it permanently deletes this data, What data does it cover</span> <a href="https://github.com/InternalError503/restart-my-chrome#clear-browser-data" id="learnMore">Learn More...</a></p>
-</div>		
-	<br/><br/>
-		<div id="saveContaner">
-			<button id="save">Save Changes</button> <span id="status"></span>
+	<hr class="uk-grid-divider" style="border:none;"></hr>
+	<div class="uk-container uk-container-center">
+		<div class="uk-grid" data-uk-grid-margin="">	
+	<!-- Confirmations and notifications -->
+	<div class="uk-width-medium-1-2">		
+		<div class="uk-panel uk-panel-box">
+		<h1 class="uk-panel-title"><i class="uk-icon-envelope uk-icon-large"></i> <span id="confirmHeading">Confirmations:</span></h1>
+			<input type="checkbox" id="enableConfirm"/><span id="confirmLabel">Enable restart confirmation.</span><br/>
+			<input type="checkbox" id="enableConfirmData"/><span id="confirmDataLabel">Enable clear data restart confirmation.</span>
 		</div>
-<script src="script/settings.js"></script>
+	</div>
+	<!-- Browser Data -->
+	<div class="uk-width-medium-1-2">
+		<div class="uk-panel uk-panel-box">
+		<h1 class="uk-panel-title"><i class="uk-icon-cog uk-icon-large"></i> <span id="browsingDataHeading">Browsing Data:</span></h1>
+			<input type="checkbox" id="enableClearingData"/><span id="clearDataLabel">Enable clearing of browser data.</span>
+	<br/><br/>
+		<span id="clearDataFromHeading">Clear the following data from:</span>
+			<select id="clearDataFrom" class="uk-button">
+				<option id="hour" value="hour">The past hour</option>
+				<option id="day"  value="day">The past day</option>
+				<option id="week"  value="week">The past week</option>
+				<option id="month"  value="month">The last 4 weeks</option>
+				<option id="forever" value="forever">The beginning of time</option>
+			</select>
+	<br/><br/>
+	<form class="uk-form">
+    <fieldset data-uk-margin>
+		<div class="uk-form-row">
+			<input type="checkbox" id="dataAppCache"/><label id="dataAppCacheLabel" for="dataAppCache">Clear AppCache.</label><br/>
+			<input type="checkbox" id="dataCache"/><label id="dataCacheLabel" for="dataCache">Clear Cache.</label><br/>
+			<input type="checkbox" id="dataCookies"/><label id="dataCookiesLabel" for="dataCookies">Clear Cookies.</label><br/>
+			<input type="checkbox" id="dataDownloads"/><label id="dataDownloadsLabel" for="dataDownloads">Clear Downloads.</label><br/>
+			<input type="checkbox" id="dataFileSystems"/><label id="dataFileSystemsLabel" for="dataFileSystems">Clear File Systems.</label><br/>
+			<input type="checkbox" id="dataFormData"/><label id="dataFormDataLabel" for="dataFormData">Clear Form Data.</label><br/>
+			<input type="checkbox" id="dataHistory"/><label id="dataHistoryLabel" for="dataHistory">Clear History.</label><br/>
+			<input type="checkbox" id="dataIndexedDB"/><label id="dataIndexedDBLabel" for="dataIndexedDB">Clear IndexedDB.</label><br/>
+			<input type="checkbox" id="dataLocalStorage"/><label id="dataLocalStorageLabel" for="dataLocalStorage">Clear Local Storage.</label><br/>
+			<input type="checkbox" id="dataPluginData"/><label id="dataPluginDataLabel" for="dataPluginData">Clear Plugin Data.</label><br/>
+			<input type="checkbox" id="dataPasswords"/><label id="dataPasswordsLabel" for="dataPasswords">Clear Passwords.</label><br/>
+			<input type="checkbox" id="dataWebSQL"/><label id="dataWebSQLLabel" for="dataWebSQL">Clear WebSQL.</label><br/>
+			<a id="sAll">Select all</a> | <a id="dAll">Deselect all</a><br/>	
+		</div>		
+   </fieldset>
+</form><br/>
+<div class="uk-alert uk-alert-danger">
+		<span id="disclaimer">The (Clear Browser Data) feature is use at own risk, If you use this feature then you understand the risk that it permanently deletes this data, What data does it cover</span> <a href="https://github.com/InternalError503/restart-my-chrome#clear-browser-data" id="learnMore">Learn more...</a>	
+</div>	
+		</div>	
+	</div>	
+	<br/>
+	<br/>
+		<div id="saveContaner">
+			<button id="save" class="uk-button uk-button-primary">Save Changes</button> 
+				<span id="status" hidden="true">
+					<i class="uk-icon-spinner uk-icon-spin"></i> <span id="statusmsg">
+					</span>
+				</span>	
+		</div>		
+	</div>
+</div>
+
+<script src="js/settings.js"></script>
+
 </body>
 </html>

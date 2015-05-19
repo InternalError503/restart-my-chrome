@@ -27,20 +27,12 @@
     "message": "Enable clearing of browser data.", 
     "description":"Text for enable clearing of browser data."
   },
-  "appOptionsShowOptions": {
-    "message": "Show Options.", 
-    "description":"Show options label"
-  },
-  "appOptionsHideOptions": {
-    "message": "Hide Options.", 
-    "description":"Hide options label"
-  },
   "appOptionsSave": {
     "message": "Save Changes", 
     "description":"Save settings button."
   },
   "appOptionsStatus": {
-    "message": "Updated", 
+    "message": "Saving", 
     "description":"Save settings status message"
   },
   "appOptionsclearDataFromHeading": {
@@ -48,23 +40,23 @@
     "description":"label for clear data from select menu"
   },  
   "appOptionsDataFromHour": {
-    "message": "the past hour", 
+    "message": "The past hour", 
     "description":"Select menu hour."
   }, 
    "appOptionsDataFromDay": {
-    "message": "the past day", 
+    "message": "The past day", 
     "description":"Select menu day."
   },  
   "appOptionsDataFromWeek": {
-    "message": "the past week", 
+    "message": "The past week", 
     "description":"Select menu week."
   },   
   "appOptionsDataFromMonth": {
-    "message": "the last 4 weeks", 
+    "message": "The last 4 weeks", 
     "description":"Select menu Month."
   }, 
    "appOptionsDataFromForever": {
-    "message": "the beginning of time", 
+    "message": "The beginning of time", 
     "description":"Select menu forever."
   }, 
   "appOptionsAppCache": {
@@ -116,15 +108,15 @@
     "description":"label for clear websql."
   },
   "appOptionsSelectAll": {
-    "message": "Select All", 
-    "description":"label for Select All"
+    "message": "Select all", 
+    "description":"label for Select all"
   },
   "appOptionsDeSelectAll": {
-    "message": "Deselect All", 
-    "description":"label for Deselect All"
+    "message": "Deselect all", 
+    "description":"label for Deselect all"
   },
   "appOptionsLearnMore": {
-    "message": "Learn More...", 
+    "message": "Learn more...", 
     "description":"label for Learn More... url"
   },
   "appOptionsDisclaimer": {

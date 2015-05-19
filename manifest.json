@@ -4,10 +4,7 @@
 	"name": "__MSG_appName__",
 	"default_locale": "en",
 		
-	"options_ui": {
-		"page": "settings.html",
-		"chrome_style": true
-	  },		
+	"options_page": "settings.html",
 		
 	"icons": { 
 			"16" : "images/icon16.png",
@@ -21,7 +18,7 @@
 		"default_icon": "images/icon512.png"
 	},		
 	"background": {
-      "scripts": [ "script/overlay.js" ]
+      "scripts": [ "js/overlay.js" ]
 	},
 		"permissions": [ "tabs", "notifications", "browsingData", "storage" ],
 		"version": "1.4"

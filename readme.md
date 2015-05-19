@@ -56,3 +56,10 @@ The __Clear Browser Data__ feature is use at own risk, If you use this feature t
 the risk that it permanently deletes this data, What data does it cover [see](#clear-browser-data)
 
 Can any of the data be recovered once deleted, __No it permanently deletes this data__.
+
+### Credits:
+Using popular open source projects.
+* UiKit ([MIT License](http://opensource.org/licenses/MIT))
+* jQuery ([MIT License](http://opensource.org/licenses/MIT))
+* normalize.css ([MIT License](http://opensource.org/licenses/MIT))
+* FontAwesome ([CC BY 3.0 License](http://creativecommons.org/licenses/by/3.0/))
