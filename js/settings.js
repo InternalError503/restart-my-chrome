@@ -78,7 +78,8 @@
 	        }, function() {
 	            // Update status to let user know options were saved.
 				document.getElementById('status').hidden = false;
-	            document.getElementById('statusmsg').textContent = chrome.i18n.getMessage("appOptionsStatus");				
+	            document.getElementById('statusmsg').textContent = chrome.i18n.getMessage("appOptionsStatus");
+				$(window).unbind('beforeunload');				
 	            setTimeout(function() {
 	                status.textContent = '';
 					document.getElementById('status').hidden = true;
@@ -157,3 +158,17 @@
 	document.getElementById('save').addEventListener('click', rmc_save_options);
 	document.getElementById('sAll').addEventListener('click', function(){rmc_toggledata_options(true);});
 	document.getElementById('dAll').addEventListener('click', function(){rmc_toggledata_options(false);});
+	
+//Listen for changes then warn user of unsaved settings.	
+$("#enableConfirm, #enableConfirmData, \
+	#clearDataFrom, #enableClearingData, \
+	#dataAppCache, #dataCache, \
+	#dataCookies, #dataDownloads, \
+	#dataFileSystems, #dataFormData, \
+	#dataHistory, #dataIndexedDB, \
+	#dataLocalStorage, #dataPluginData, \
+	#dataPasswords, #dataWebSQL").change( function() {	
+		$(window).on('beforeunload', function(){
+			  return chrome.i18n.getMessage("appOptionsWindowDirty");
+		});
+  });

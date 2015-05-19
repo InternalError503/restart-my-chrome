@@ -123,6 +123,10 @@
     "message": "The (Clear Browser Data) feature is use at own risk, If you use this feature then you understand the risk that it permanently deletes this data, What data does it cover", 
     "description":"Disclaimer Message"
   },
+  "appOptionsWindowDirty": {
+    "message": "Your settings are not saved!", 
+    "description":"Warning message when changed settings are not saved."
+  },
   "appRestartConfrim": {
     "message": "Do you really want to restart?", 
     "description":"Test for restart confirmation"
