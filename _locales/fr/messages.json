@@ -1,0 +1,138 @@
+{
+  "appName": {
+    "message": "Redémarrer mon Chrome",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "Permet aux utilisateurs de facilement relancer le navigateur web.", 
+    "description":"The description of the application, displayed in the web store."
+  },
+  "appOptionsConfirmations": {
+    "message": "Les confirmations :", 
+    "description":"Confirmations label"
+  },
+  "appOptionsEnableConfirm": {
+    "message": "Activer redémarrer la confirmation.", 
+    "description":"Text for enable confirmation on restart."
+  },
+  "appOptionsEnableConfirmData": {
+    "message": "Activer effacer les données redémarrer la confirmation.", 
+    "description":"Text for enable confirmation on clear data restart."
+  },
+  "appOptionsClearData": {
+    "message": "Les données de navigation :", 
+    "description":"Browsing Data Label"
+  },
+  "appOptionsEnableClearData": {
+    "message": "Activer l'effacement des données du navigateur.", 
+    "description":"Text for enable clearing of browser data."
+  },
+  "appOptionsSave": {
+    "message": "Enregistrer les modifications", 
+    "description":"Save settings button."
+  },
+  "appOptionsStatus": {
+    "message": "Enregistrement", 
+    "description":"Save settings status message"
+  },
+  "appOptionsclearDataFromHeading": {
+    "message": "Effacer les données suivantes de :", 
+    "description":"label for clear data from select menu"
+  },  
+  "appOptionsDataFromHour": {
+    "message": "La dernière heure", 
+    "description":"Select menu hour."
+  }, 
+   "appOptionsDataFromDay": {
+    "message": "La dernière journée", 
+    "description":"Select menu day."
+  },  
+  "appOptionsDataFromWeek": {
+    "message": "La semaine dernière", 
+    "description":"Select menu week."
+  },   
+  "appOptionsDataFromMonth": {
+    "message": "Les 4 dernières semaines", 
+    "description":"Select menu Month."
+  }, 
+   "appOptionsDataFromForever": {
+    "message": "Le début de l'heure", 
+    "description":"Select menu forever."
+  }, 
+  "appOptionsAppCache": {
+    "message": "AppCache claire.", 
+    "description":"label for clear appcache"
+  },
+  "appOptionsCache": {
+    "message": "Effacer la mémoire cache.", 
+    "description":"label for clear cache"
+  },
+  "appOptionsCookies": {
+    "message": "Effacer les cookies.", 
+    "description":"label for clear cookies"
+  },
+  "appOptionsDownloads": {
+    "message": "Effacer la liste des téléchargements.", 
+    "description":"label for clear downloads"
+  },
+  "appOptionsFileSystems": {
+    "message": "Effacer les systèmes de fichiers.", 
+    "description":"label for clear file systems"
+  },
+  "appOptionsFormData": {
+    "message": "Effacer les données de formulaire.", 
+    "description":"label for clear form data"
+  },
+  "appOptionsHistory": {
+    "message": "Effacer l'historique.", 
+    "description":"label for clear history"
+  },
+  "appOptionsIndexedDB": {
+    "message": "IndexedDB claire.", 
+    "description":"label for clear indexeddb"
+  },
+  "appOptionsLocalStorage": {
+    "message": "Effacez le stockage local.", 
+    "description":"label for clear local storage"
+  },
+  "appOptionsPluginData": {
+    "message": "Effacer données de plug-in.", 
+    "description":"label for clear plugin data"
+  },
+  "appOptionsPasswords": {
+    "message": "Effacer les mots de passe.", 
+    "description":"label for clear passwords"
+  },
+  "appOptionsWebSQL": {
+    "message": "WebSQL claire.", 
+    "description":"label for clear websql."
+  },
+  "appOptionsSelectAll": {
+    "message": "Sélectionner tout", 
+    "description":"label for Select all"
+  },
+  "appOptionsDeSelectAll": {
+    "message": "Désélectionner tout", 
+    "description":"label for Deselect all"
+  },
+  "appOptionsLearnMore": {
+    "message": "En savoir plus...", 
+    "description":"label for Learn More... url"
+  },
+  "appOptionsDisclaimer": {
+    "message": "L'(fonction la fenêtre Données) claire est à leurs propres risques, si vous utilisez cette fonctionnalité, vous comprendre le risque qu'il supprime définitivement ces données, quelles données faut-il couvrir", 
+    "description":"Disclaimer Message"
+  },
+  "appOptionsWindowDirty": {
+    "message": "Les paramètres ne sont pas sauvegardés !", 
+    "description":"Warning message when changed settings are not saved."
+  },
+  "appRestartConfrim": {
+    "message": "Voulez-vous vraiment redémarrer ?", 
+    "description":"Test for restart confirmation"
+  },
+  "appRestartConfrimData": {
+    "message": "Voulez-vous vraiment effacer toutes les données et redémarrer ?", 
+    "description":"Test for clear data restart confirmation"
+  }
+}
