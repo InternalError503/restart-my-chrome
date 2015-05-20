@@ -21,6 +21,13 @@ Allows users to easily restart `Chrome web browser`
 - Clear browser data.
 - Set when to clear data from.
 
+### Localization:
+Currently supports the following locales
+- en (English)
+- en_Us (United States English)
+- fr (French)
+- More to come...
+
 ### History:
 We brought you [restart my fox] (https://addons.mozilla.org/en-US/firefox/addon/restart-my-fox), Now we bring you [restart my chrome] (https://chrome.google.com/webstore/detail/restart-my-chrome/poifblphedfakpplnemomhgkhhpkpkla).
 
