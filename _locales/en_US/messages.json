@@ -27,14 +27,6 @@
     "message": "Enable clearing of browser data.", 
     "description":"Text for enable clearing of browser data."
   },
-  "appOptionsSave": {
-    "message": "Save Changes", 
-    "description":"Save settings button."
-  },
-  "appOptionsStatus": {
-    "message": "Saving", 
-    "description":"Save settings status message"
-  },
   "appOptionsclearDataFromHeading": {
     "message": "Clear the following data from:", 
     "description":"label for clear data from select menu"

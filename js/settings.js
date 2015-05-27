@@ -29,8 +29,7 @@
 	        document.getElementById('confirmLabel').textContent = chrome.i18n.getMessage("appOptionsEnableConfirm");
 	        document.getElementById('browsingDataHeading').textContent = chrome.i18n.getMessage("appOptionsClearData");
 	        document.getElementById('clearDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableClearData");
-	        document.getElementById('confirmDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableConfirmData");
-	        document.getElementById('save').textContent = chrome.i18n.getMessage("appOptionsSave");			
+	        document.getElementById('confirmDataLabel').textContent = chrome.i18n.getMessage("appOptionsEnableConfirmData");		
 			document.getElementById('clearDataFromHeading').textContent = chrome.i18n.getMessage("appOptionsclearDataFromHeading");
 			document.getElementById('hour').textContent = chrome.i18n.getMessage("appOptionsDataFromHour");
 			document.getElementById('day').textContent = chrome.i18n.getMessage("appOptionsDataFromDay");
@@ -75,15 +74,6 @@
 	            clearAllDataPluginData: document.getElementById('dataPluginData').checked,
 	            clearAllDataPasswords: document.getElementById('dataPasswords').checked,
 	            clearAllDatadataWebSQL: document.getElementById('dataWebSQL').checked
-	        }, function() {
-	            // Update status to let user know options were saved.
-				document.getElementById('status').hidden = false;
-	            document.getElementById('statusmsg').textContent = chrome.i18n.getMessage("appOptionsStatus");
-				$(window).unbind('beforeunload');				
-	            setTimeout(function() {
-	                status.textContent = '';
-					document.getElementById('status').hidden = true;
-	            }, 1000);
 	        });
 	    } catch (e) {
 	        alert("An error was encountered while attempting to save settings! " + e);
@@ -155,11 +145,10 @@
 	}	
 
 	document.addEventListener('DOMContentLoaded', init);
-	document.getElementById('save').addEventListener('click', rmc_save_options);
 	document.getElementById('sAll').addEventListener('click', function(){rmc_toggledata_options(true);});
 	document.getElementById('dAll').addEventListener('click', function(){rmc_toggledata_options(false);});
 	
-//Listen for changes then warn user of unsaved settings.	
+//Save settings as they are changed.	
 $("#enableConfirm, #enableConfirmData, \
 	#clearDataFrom, #enableClearingData, \
 	#dataAppCache, #dataCache, \
@@ -167,8 +156,6 @@ $("#enableConfirm, #enableConfirmData, \
 	#dataFileSystems, #dataFormData, \
 	#dataHistory, #dataIndexedDB, \
 	#dataLocalStorage, #dataPluginData, \
-	#dataPasswords, #dataWebSQL").change( function() {	
-		$(window).on('beforeunload', function(){
-			  return chrome.i18n.getMessage("appOptionsWindowDirty");
-		});
+	#dataPasswords, #dataWebSQL").change( function() {			
+			  rmc_save_options();	
   });

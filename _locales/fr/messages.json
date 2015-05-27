@@ -27,14 +27,6 @@
     "message": "Activer l'effacement des données du navigateur.", 
     "description":"Text for enable clearing of browser data."
   },
-  "appOptionsSave": {
-    "message": "Enregistrer les modifications", 
-    "description":"Save settings button."
-  },
-  "appOptionsStatus": {
-    "message": "Enregistrement", 
-    "description":"Save settings status message"
-  },
   "appOptionsclearDataFromHeading": {
     "message": "Effacer les données suivantes de :", 
     "description":"label for clear data from select menu"
