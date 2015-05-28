@@ -23,8 +23,10 @@
 			THE SOFTWARE.
 
 		*/
+var restartmychromeoptions = {	
+		
 	//Load up localised content	
-	function init() {
+	init: function() {
 	        document.getElementById('confirmHeading').textContent = chrome.i18n.getMessage("appOptionsConfirmations");
 	        document.getElementById('confirmLabel').textContent = chrome.i18n.getMessage("appOptionsEnableConfirm");
 	        document.getElementById('browsingDataHeading').textContent = chrome.i18n.getMessage("appOptionsClearData");
@@ -52,10 +54,23 @@
 			document.getElementById('dAll').textContent = chrome.i18n.getMessage("appOptionsDeSelectAll");
 	        document.getElementById('learnMore').textContent = chrome.i18n.getMessage("appOptionsLearnMore");
 	        document.getElementById('disclaimer').textContent = chrome.i18n.getMessage("appOptionsDisclaimer");
-	        rmc_restore_options();
-	    }
+	        restartmychromeoptions.rmc_restore_options();
+			
+		//Save settings as they are changed.	
+		$("#enableConfirm, #enableConfirmData, \
+			#clearDataFrom, #enableClearingData, \
+			#dataAppCache, #dataCache, \
+			#dataCookies, #dataDownloads, \
+			#dataFileSystems, #dataFormData, \
+			#dataHistory, #dataIndexedDB, \
+			#dataLocalStorage, #dataPluginData, \
+			#dataPasswords, #dataWebSQL").change( function() {			
+					  restartmychromeoptions.rmc_save_options();				  
+		  });
+			
+	    },
 	    // Saves options.
-	function rmc_save_options() {
+	rmc_save_options: function() {
 	    try {
 	        chrome.storage.sync.set({
 	            confirmRestart: document.getElementById('enableConfirm').checked,
@@ -78,10 +93,10 @@
 	    } catch (e) {
 	        alert("An error was encountered while attempting to save settings! " + e);
 	    }
-	}
+	},
 
 	// Restores saved options.
-	function rmc_restore_options() {
+	rmc_restore_options: function() {
 
 	    try {
 	        chrome.storage.sync.get({
@@ -122,10 +137,10 @@
 	    } catch (e) {
 	        alert("An error was encountered while attempting to restore settings! " + e);
 	    }
-	}
+	},
 
 	//lets select or deselect all clear data items
-	function rmc_toggledata_options(aToggle) {
+	rmc_toggledata_options: function(aToggle) {
 	    try {
 	            document.getElementById('dataAppCache').checked = aToggle;
 	            document.getElementById('dataCache').checked = aToggle;
@@ -142,20 +157,10 @@
 	    } catch (e) {
 	        console.log("An error was encountered while toggling all data options! " + e);
 	    }
-	}	
-
-	document.addEventListener('DOMContentLoaded', init);
-	document.getElementById('sAll').addEventListener('click', function(){rmc_toggledata_options(true);});
-	document.getElementById('dAll').addEventListener('click', function(){rmc_toggledata_options(false);});
+	}
 	
-//Save settings as they are changed.	
-$("#enableConfirm, #enableConfirmData, \
-	#clearDataFrom, #enableClearingData, \
-	#dataAppCache, #dataCache, \
-	#dataCookies, #dataDownloads, \
-	#dataFileSystems, #dataFormData, \
-	#dataHistory, #dataIndexedDB, \
-	#dataLocalStorage, #dataPluginData, \
-	#dataPasswords, #dataWebSQL").change( function() {			
-			  rmc_save_options();	
-  });
+};  
+
+document.addEventListener('DOMContentLoaded', restartmychromeoptions.init);
+document.getElementById('sAll').addEventListener('click', function(){restartmychromeoptions.rmc_toggledata_options(true);});
+document.getElementById('dAll').addEventListener('click', function(){restartmychromeoptions.rmc_toggledata_options(false);});

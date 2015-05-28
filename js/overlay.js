@@ -25,104 +25,111 @@
 
 	*/
 chrome.browserAction.onClicked.addListener(function(activeTab) {
-    chrome.storage.sync.get({
-        confirmRestart: false,
-        confirmDataRestart: true,
-		clearDataFrom: "hour",
-        clearAllData: false
-    }, function(key) {
-        try {
-            var RestartURI = "chrome://restart";
-            var callback = function() {
-                chrome.tabs.create({
-                    url: RestartURI
-                });
-            };
-            if (key.clearAllData === true) {
-				
-				var clearFrom;
-				switch (key.clearDataFrom){
-					case "hour": 
-					clearFrom = (new Date()).setHours(new Date().getHours() - 1);
-					break;
-					case "day": 
-					clearFrom = (new Date()).setHours(new Date().getHours() - 24);
-					break;
-					case "week": 
-					clearFrom = (new Date()).setDate(new Date().getDate() - 7);
-					break;
-					case "month": 
-					clearFrom = (new Date()).setDate(new Date().getDate() - 28);
-					break;
-					case "forever": 
-					clearFrom = (new Date()).getTime() - (1000 * 60 * 60 * 24 * 7 * 52);
-					break;					
-				}	
-				if (clearFrom === ""){return;}	
-                clearAllData(true, callback, key.confirmDataRestart, clearFrom);
-            } else if (key.confirmRestart === true) {
-                if (confirm(chrome.i18n.getMessage("appRestartConfrim"))) {
-                    chrome.tabs.create({
-                        url: RestartURI
-                    });
-                }
-            } else {
-                chrome.tabs.create({
-                    url: RestartURI
-                });
-            }
-        } catch (e) {
-            alert("An error was encountered while attempting to restart browser! " + e);
-        }
-    });
+	restartmychrome.browserRestart();
 });
 
-//Clear browser data
-function clearAllData(aBoolean, aCallback, aConfirm, aFrom) {
+var restartmychrome = {
 
-    var clear = function() {
-            //Get user settings for what to clear 
-            chrome.storage.sync.get({
-                clearAllData: false,
-                clearAllDataAppCache: true,
-                clearAllDataCache: true,
-                clearAllDataCookies: true,
-                clearAllDataDownloads: true,
-                clearAllDataFileSystems: true,
-                clearAllDataFormData: true,
-                clearAllDataHistory: true,
-                clearAllDataIndexedDB: true,
-                clearAllDataLocalStorage: true,
-                clearAllDataPluginData: true,
-                clearAllDataPasswords: true,
-                clearAllDatadataWebSQL: true
-            }, function(key) {
-                //Clear data based on user settings.
-                chrome.browsingData.remove({
-                    "since": aFrom
-                }, {
-                    "appcache": key.clearAllDataAppCache,
-                    "cache": key.clearAllDataCache,
-                    "cookies": key.clearAllDataCookies,
-                    "downloads": key.clearAllDataDownloads,
-                    "fileSystems": key.clearAllDataFileSystems,
-                    "formData": key.clearAllDataFormData,
-                    "history": key.clearAllDataHistory,
-                    "indexedDB": key.clearAllDataIndexedDB,
-                    "localStorage": key.clearAllDataLocalStorage,
-                    "pluginData": key.clearAllDataPluginData,
-                    "passwords": key.clearAllDataPasswords,
-                    "webSQL": key.clearAllDatadataWebSQL
-                }, aCallback);
-            });
-        }
-        //Check if users want a confirmation	
-    if (aConfirm === true) {
-        if (aBoolean === true && confirm(chrome.i18n.getMessage("appRestartConfrimData"))) {
-            clear();
-        }
-    } else {
-        clear();
-    }
+	//Restart event
+	browserRestart : function() {
+		chrome.storage.sync.get({
+			confirmRestart: false,
+			confirmDataRestart: true,
+			clearDataFrom: "hour",
+			clearAllData: false
+		}, function(key) {
+			try {
+				var RestartURI = "chrome://restart";
+				var callback = function() {
+					chrome.tabs.create({
+						url: RestartURI
+					});
+				};
+				if (key.clearAllData === true) {
+					
+					var clearFrom;
+					switch (key.clearDataFrom){
+						case "hour": 
+						clearFrom = (new Date()).setHours(new Date().getHours() - 1);
+						break;
+						case "day": 
+						clearFrom = (new Date()).setHours(new Date().getHours() - 24);
+						break;
+						case "week": 
+						clearFrom = (new Date()).setDate(new Date().getDate() - 7);
+						break;
+						case "month": 
+						clearFrom = (new Date()).setDate(new Date().getDate() - 28);
+						break;
+						case "forever": 
+						clearFrom = (new Date()).getTime() - (1000 * 60 * 60 * 24 * 7 * 52);
+						break;					
+					}	
+					if (clearFrom === ""){return;}	
+					restartmychrome.clearAllData(true, callback, key.confirmDataRestart, clearFrom);
+				} else if (key.confirmRestart === true) {
+					if (confirm(chrome.i18n.getMessage("appRestartConfrim"))) {
+						chrome.tabs.create({
+							url: RestartURI
+						});
+					}
+				} else {
+					chrome.tabs.create({
+						url: RestartURI
+					});
+				}
+			} catch (e) {
+				alert("An error was encountered while attempting to restart browser! " + e);
+			}
+		});
+	},	
+	//Clear browser data
+	clearAllData : function(aBoolean, aCallback, aConfirm, aFrom) {
 
-}
+		var clear = function() {
+				//Get user settings for what to clear 
+				chrome.storage.sync.get({
+					clearAllData: false,
+					clearAllDataAppCache: true,
+					clearAllDataCache: true,
+					clearAllDataCookies: true,
+					clearAllDataDownloads: true,
+					clearAllDataFileSystems: true,
+					clearAllDataFormData: true,
+					clearAllDataHistory: true,
+					clearAllDataIndexedDB: true,
+					clearAllDataLocalStorage: true,
+					clearAllDataPluginData: true,
+					clearAllDataPasswords: true,
+					clearAllDatadataWebSQL: true
+				}, function(key) {
+					//Clear data based on user settings.
+					chrome.browsingData.remove({
+						"since": aFrom
+					}, {
+						"appcache": key.clearAllDataAppCache,
+						"cache": key.clearAllDataCache,
+						"cookies": key.clearAllDataCookies,
+						"downloads": key.clearAllDataDownloads,
+						"fileSystems": key.clearAllDataFileSystems,
+						"formData": key.clearAllDataFormData,
+						"history": key.clearAllDataHistory,
+						"indexedDB": key.clearAllDataIndexedDB,
+						"localStorage": key.clearAllDataLocalStorage,
+						"pluginData": key.clearAllDataPluginData,
+						"passwords": key.clearAllDataPasswords,
+						"webSQL": key.clearAllDatadataWebSQL
+					}, aCallback);
+				});
+			}
+			//Check if users want a confirmation	
+		if (aConfirm === true) {
+			if (aBoolean === true && confirm(chrome.i18n.getMessage("appRestartConfrimData"))) {
+				clear();
+			}
+		} else {
+			clear();
+		}
+
+	}
+};
