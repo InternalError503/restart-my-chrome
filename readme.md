@@ -20,6 +20,7 @@ Allows users to easily restart `Chrome web browser`
 - Enable restart confirmation.
 - Clear browser data.
 - Set when to clear data from.
+- Automatically restart at user set intervals.
 
 ### Localization:
 Currently supports the following locales

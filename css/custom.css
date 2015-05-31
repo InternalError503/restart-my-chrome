@@ -1,13 +1,18 @@
-body { 
-	font-size:19px; 
+#main {
+    font-size: 19px;
 }
-
+#clearDataFromHeading {
+    padding: 3px;
+}
 #clearDataFrom {
-    background-image: url(../images/arrow.png), linear-gradient(to bottom,#fff,#eee);
+    background-image: url(../images/arrow.png), linear-gradient(to bottom, #fff, #eee);
     background-position: center right;
     background-repeat: no-repeat;
 }
-
 #disclaimer {
-	font-size:16px; 
+    font-size: 16px;
+}
+#main-cancel {
+    height: 145px;
+    width: 385px;
 }

@@ -126,5 +126,33 @@
   "appRestartConfrimData": {
     "message": "Voulez-vous vraiment effacer toutes les données et redémarrer ?", 
     "description":"Test for clear data restart confirmation"
+  },
+  "appOptionsEnableTimedRestart": {
+    "message": "Enable automatic restart at set interval.", 
+    "description":"Enable automatic restart options label"
+  },
+  "appOptionsRestartTimeHour": {
+    "message": "Hour based timer.", 
+    "description":"Hour based timer label"
+  },
+  "appOptionsRestartMinuteTime": {
+    "message": "Minute based timer.", 
+    "description":"Minute based timer label"
+  },
+  "appOptionsRestartTime": {
+    "message": "Set restart time: ", 
+    "description":"Set restart time label"
+  },
+  "appCancelTitle": {
+    "message": "Auto restart is about to trigger.", 
+    "description":"Main title for cancel popup"
+  },
+  "appCancelRestartIn": {
+    "message": "Restarting in: ", 
+    "description":"label for Restarting in: "
+  },
+  "appCancelButton": {
+    "message": "Cancel", 
+    "description":"label for cancel button"
   }
 }
