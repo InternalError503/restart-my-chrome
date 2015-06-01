@@ -151,6 +151,10 @@
     "message": "Restarting in:! ", 
     "description":"label for Restarting in: "
   },
+  "appCancelRestartNowButton": {
+    "message": "Restart Now", 
+    "description":"label for RestartNow button"
+  },
   "appCancelButton": {
     "message": "Cancel", 
     "description":"label for cancel button"
