@@ -148,7 +148,7 @@
     "description":"Main title for cancel popup"
   },
   "appCancelRestartIn": {
-    "message": "Restarting in: ", 
+    "message": "Restarting in:", 
     "description":"label for Restarting in: "
   },
   "appCancelRestartNowButton": {
