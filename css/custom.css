@@ -4,11 +4,6 @@
 #clearDataFromHeading {
     padding: 3px;
 }
-#clearDataFrom {
-    background-image: url(../images/arrow.png), linear-gradient(to bottom, #fff, #eee);
-    background-position: center right;
-    background-repeat: no-repeat;
-}
 #disclaimer {
     font-size: 16px;
 }
