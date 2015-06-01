@@ -151,6 +151,18 @@
     "message": " minutes", 
     "description":"label for Restarting in minutes "
   },
+  "appOptionsSupportTitle": {
+    "message": "Support & Information.", 
+    "description":"label for Support & Information."
+  },
+  "appOptionsContactUs": {
+    "message": "Need help contact support: ", 
+    "description":"label for Need help contact support:"
+  },
+  "appOptionsChangeLog": {
+    "message": "See all changes made: ", 
+    "description":"label for See all changes made:"
+  },
   "appCancelTitle": {
     "message": "Auto restart is about to trigger.!", 
     "description":"Main title for cancel popup"

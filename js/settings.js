@@ -60,6 +60,9 @@
 	        document.getElementById('timedRestartTimeLabel').textContent = chrome.i18n.getMessage("appOptionsRestartTime");
 	        document.getElementById('restartInLabel').textContent = chrome.i18n.getMessage("appOptionsRestartIn");
 	        document.getElementById('restartInMinutesLabel').textContent = chrome.i18n.getMessage("appOptionsRestartInMinutes");
+	        document.getElementById('supportTitle').textContent = chrome.i18n.getMessage("appOptionsSupportTitle");
+	        document.getElementById('contact-us').textContent = chrome.i18n.getMessage("appOptionsContactUs");
+	        document.getElementById('changelog').textContent = chrome.i18n.getMessage("appOptionsChangeLog");
 	        restartmychromeoptions.rmc_restore_options();
 
 	        $('#timedRestartHour, #timedRestartMinute').change(function() {
