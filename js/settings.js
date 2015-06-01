@@ -88,6 +88,9 @@
 	                document.getElementById('confirmLabel').className = "";
 	                document.getElementById('confirmDataLabel').className = "";
 	            }
+                chrome.browserAction.setBadgeText({
+                    text: ""
+                });
 	        });
 
 	        //Save settings as they are changed.	
