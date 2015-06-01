@@ -36,7 +36,8 @@ var restartmychrome = {
             confirmRestart: false,
             confirmDataRestart: true,
             clearDataFrom: "hour",
-            clearAllData: false
+            clearAllData: false,
+            timedRestart: false
         }, function(key) {
             try {
                 var RestartURI = "chrome://restart";
@@ -45,6 +46,14 @@ var restartmychrome = {
                         url: RestartURI
                     });
                 };
+
+                if (key.timedRestart === true) {
+                    chrome.storage.sync.set({
+                        confirmRestart: false,
+                        confirmDataRestart: false
+                    });
+                }
+
                 if (key.clearAllData === true) {
 
                     var clearFrom;
@@ -165,6 +174,13 @@ var restartmychrometimer = {
                 timedRestartFromType: 2,
                 timedRestartFrom: 1
             }, function(key) {
+
+                if (key.timedRestart === true) {
+                    chrome.storage.sync.set({
+                        confirmRestart: false,
+                        confirmDataRestart: false
+                    });
+                }
 
                 var timeFilter = "";
 
