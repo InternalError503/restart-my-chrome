@@ -143,6 +143,14 @@
     "message": "Set restart time: ", 
     "description":"Set restart time label"
   },
+  "appOptionsRestartIn": {
+    "message": "Restarting in:", 
+    "description":"label for Restarting in: "
+  },
+  "appOptionsRestartInMinutes": {
+    "message": " minutes", 
+    "description":"label for Restarting in minutes "
+  },
   "appCancelTitle": {
     "message": "Auto restart is about to trigger.", 
     "description":"Main title for cancel popup"

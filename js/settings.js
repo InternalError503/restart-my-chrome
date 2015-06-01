@@ -58,6 +58,8 @@
 	        document.getElementById('restartTimeHourLabel').textContent = chrome.i18n.getMessage("appOptionsRestartTimeHour");
 	        document.getElementById('restartTimeMinuteLabel').textContent = chrome.i18n.getMessage("appOptionsRestartMinuteTime");
 	        document.getElementById('timedRestartTimeLabel').textContent = chrome.i18n.getMessage("appOptionsRestartTime");
+	        document.getElementById('restartInLabel').textContent = chrome.i18n.getMessage("appOptionsRestartIn");
+	        document.getElementById('restartInMinutesLabel').textContent = chrome.i18n.getMessage("appOptionsRestartInMinutes");
 	        restartmychromeoptions.rmc_restore_options();
 
 	        $('#timedRestartHour, #timedRestartMinute').change(function() {
@@ -99,6 +101,12 @@
 			#setRestartTime").change(function() {
 	            restartmychromeoptions.rmc_save_options();
 	        });
+
+	        chrome.runtime.onMessage.addListener(
+	            function(request, sender, sendResponse) {
+	                document.getElementById('remainingTime').textContent = request.aTime[0] + ":" + request.aTime[1];
+	            }
+	        );
 
 	    },
 	    // Saves options.
