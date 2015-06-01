@@ -33,6 +33,7 @@
 	            );
 	            document.getElementById('cancelTitle').textContent = chrome.i18n.getMessage("appCancelTitle");
 	            document.getElementById('cancelRestartIn').textContent = chrome.i18n.getMessage("appCancelRestartIn");
+	            document.getElementById('restartInMinutesLabel').textContent = chrome.i18n.getMessage("appCancelRestartInMinutes");
 	            document.getElementById('restartNowButton').textContent = chrome.i18n.getMessage("appCancelRestartNowButton");
 	            document.getElementById('cancelButton').textContent = chrome.i18n.getMessage("appCancelButton");
 	        } catch (e) {

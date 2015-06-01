@@ -159,6 +159,10 @@
     "message": "Restarting in:", 
     "description":"label for Restarting in: "
   },
+  "appCancelRestartInMinutes": {
+    "message": " minutes", 
+    "description":"label for Restarting in minutes "
+  },
   "appCancelRestartNowButton": {
     "message": "Restart Now", 
     "description":"label for RestartNow button"
