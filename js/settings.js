@@ -139,6 +139,7 @@
 	                timedRestartFromType: $('input:radio[name=timedRestartTime]:checked').val(),
 	                timedRestartFrom: document.getElementById('setRestartTime').value
 	            });
+				restartmychromeoptions.sendNotification("success", "Saved", "<i class='uk-icon-check'></i>", true);
 	        } catch (e) {
 	            alert("An error was encountered while attempting to save settings! " + e);
 	        }
@@ -231,7 +232,15 @@
 	        } catch (e) {
 	            alert("An error was encountered while toggling all data options! " + e);
 	        }
-	    }
+	    },
+		
+		sendNotification : function (aType, aMessage, aIcon, aUseIcon){
+			if (aUseIcon === true){
+				UIkit.notify(aIcon + " "+ aMessage, {status:aType, timeout : 1000});
+			}else{
+				UIkit.notify(aMessage, {status:aType, timeout : 1000});
+			}	
+		}	
 
 	};
 
