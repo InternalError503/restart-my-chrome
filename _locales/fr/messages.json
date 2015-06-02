@@ -115,10 +115,6 @@
     "message": "L'(fonction la fenêtre Données) claire est à leurs propres risques, si vous utilisez cette fonctionnalité, vous comprendre le risque qu'il supprime définitivement ces données, quelles données faut-il couvrir", 
     "description":"Disclaimer Message"
   },
-  "appOptionsWindowDirty": {
-    "message": "Les paramètres ne sont pas sauvegardés !", 
-    "description":"Warning message when changed settings are not saved."
-  },
   "appRestartConfrim": {
     "message": "Voulez-vous vraiment redémarrer ?", 
     "description":"Test for restart confirmation"
