@@ -109,7 +109,7 @@
 			#dataPasswords, #dataWebSQL, \
 			#enableTimedRestart, #timedRestartHour, \
 			#timedRestartMinute, #timedRestartTime, \
-			#setRestartTime").change(function() {
+			#setRestartTime, #enableStartupPage").change(function() {
 	            restartmychromeoptions.rmc_save_options();
 	        });
 
