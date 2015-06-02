@@ -229,6 +229,7 @@
 	            document.getElementById('dataPluginData').checked = aToggle;
 	            document.getElementById('dataPasswords').checked = aToggle;
 	            document.getElementById('dataWebSQL').checked = aToggle;
+				restartmychromeoptions.rmc_save_options();
 	        } catch (e) {
 	            alert("An error was encountered while toggling all data options! " + e);
 	        }
