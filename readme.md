@@ -21,6 +21,7 @@ Allows users to easily restart `Chrome web browser`
 - Clear browser data.
 - Set when to clear data from.
 - Automatically restart at user set intervals.
+- Open a specific page after restart i.e your home page.
 
 ### Localization:
 Currently supports the following locales
