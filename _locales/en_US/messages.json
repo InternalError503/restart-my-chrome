@@ -147,6 +147,22 @@
     "message": " minutes", 
     "description":"label for Restarting in minutes "
   },
+  "appOptionsStartupTitle": {
+    "message": "Start-up page", 
+    "description":"label for startup title"
+  }, 
+  "appOptionsEnableStartupPage": {
+    "message": "Open a specific page after restart.", 
+    "description":"label for enable startup page"
+  },
+  "appOptionsStartupPageURL": {
+    "message": "Enter website address: ", 
+    "description":"label for startup page URL"
+  },
+  "appOptionsStartupPageURLP": {
+    "message": "Enter a web address (URL)", 
+    "description":"label for startup page URL placeholder"
+  },
   "appOptionsSupportTitle": {
     "message": "Support & Information.", 
     "description":"label for Support & Information."

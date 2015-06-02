@@ -62,7 +62,12 @@
 	        document.getElementById('restartInMinutesLabel').textContent = chrome.i18n.getMessage("appOptionsRestartInMinutes");
 	        document.getElementById('supportTitle').textContent = chrome.i18n.getMessage("appOptionsSupportTitle");
 	        document.getElementById('contact-us').textContent = chrome.i18n.getMessage("appOptionsContactUs");
-	        document.getElementById('changelog').textContent = chrome.i18n.getMessage("appOptionsChangeLog");
+	        document.getElementById('changelog').textContent = chrome.i18n.getMessage("appOptionsChangeLog");			
+	        document.getElementById('startupTitle').textContent = chrome.i18n.getMessage("appOptionsStartupTitle");
+	        document.getElementById('startupPageEnableLabel').textContent = chrome.i18n.getMessage("appOptionsEnableStartupPage");
+	        document.getElementById('startupPageURLLabel').textContent = chrome.i18n.getMessage("appOptionsStartupPageURL");
+	        document.getElementById('startupPageURL').setAttribute("placeholder", chrome.i18n.getMessage("appOptionsStartupPageURLP"));			
+			
 	        restartmychromeoptions.rmc_restore_options();
 
 	        $('#timedRestartHour, #timedRestartMinute').change(function() {
@@ -113,6 +118,16 @@
 	                document.getElementById('remainingTime').textContent = request.aTime[0] + ":" + request.aTime[1];
 	            }
 	        );
+			
+			$("#startupPageURLClear").click(function() {
+				$('#startupPageURL').val("");
+				restartmychromeoptions.sendNotification("danger", "Cleared", "<i class='uk-icon-times'></i>", true);
+				restartmychromeoptions.rmc_save_options();
+			});
+			
+			$("#startupPageURLSave").click(function() {
+				restartmychromeoptions.rmc_save_options();
+			});
 
 	    },
 	    // Saves options.
@@ -135,6 +150,8 @@
 	                clearAllDataPluginData: document.getElementById('dataPluginData').checked,
 	                clearAllDataPasswords: document.getElementById('dataPasswords').checked,
 	                clearAllDatadataWebSQL: document.getElementById('dataWebSQL').checked,
+					openStartPage: document.getElementById('enableStartupPage').checked,
+					openStartPageURL: document.getElementById('startupPageURL').value.trim(),
 	                timedRestart: document.getElementById('enableTimedRestart').checked,
 	                timedRestartFromType: $('input:radio[name=timedRestartTime]:checked').val(),
 	                timedRestartFrom: document.getElementById('setRestartTime').value
@@ -166,6 +183,8 @@
 	                clearAllDataPluginData: true,
 	                clearAllDataPasswords: true,
 	                clearAllDatadataWebSQL: true,
+					openStartPage: false,
+					openStartPageURL: "",
 	                timedRestart: false,
 	                timedRestartFromType: 2,
 	                timedRestartFrom: 1
@@ -185,7 +204,9 @@
 	                document.getElementById('dataLocalStorage').checked = key.clearAllDataLocalStorage;
 	                document.getElementById('dataPluginData').checked = key.clearAllDataPluginData;
 	                document.getElementById('dataPasswords').checked = key.clearAllDataPasswords;
-	                document.getElementById('dataWebSQL').checked = key.clearAllDatadataWebSQL;
+	                document.getElementById('dataWebSQL').checked = key.clearAllDatadataWebSQL;					
+					document.getElementById('enableStartupPage').checked = key.openStartPage;
+					document.getElementById('startupPageURL').value = key.openStartPageURL;				
 	                document.getElementById('enableTimedRestart').checked = key.timedRestart;
 	                $('input:radio[name="timedRestartTime"]').filter('[value="' + key.timedRestartFromType + '"]').attr('checked', true);
 	                //For hours limit to 24h as maximum.

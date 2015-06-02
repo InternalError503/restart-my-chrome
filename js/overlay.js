@@ -29,6 +29,25 @@ chrome.browserAction.onClicked.addListener(function(activeTab) {
 });
 
 var restartmychrome = {
+	
+	init : function(){
+		 chrome.storage.sync.get({
+			restarted: false,
+			openStartPage: false,
+			openStartPageURL: "",
+		}, function(key) {
+			if (key.restarted === true && key.openStartPage === true){
+				chrome.storage.sync.set({
+					restarted: false
+				});
+				if (key.openStartPageURL != ""){
+					chrome.tabs.create({
+						url: key.openStartPageURL
+					 });
+				}
+			}
+		});
+	},	
 
     //Restart event
     browserRestart: function() {
@@ -42,6 +61,9 @@ var restartmychrome = {
             try {
                 var RestartURI = "chrome://restart";
                 var callback = function() {
+					chrome.storage.sync.set({
+						restarted: true
+					});
                     chrome.tabs.create({
                         url: RestartURI
                     });
@@ -80,11 +102,17 @@ var restartmychrome = {
                     restartmychrome.clearAllData(true, callback, key.confirmDataRestart, clearFrom);
                 } else if (key.confirmRestart === true) {
                     if (confirm(chrome.i18n.getMessage("appRestartConfrim"))) {
+						chrome.storage.sync.set({
+							restarted: true
+						});
                         chrome.tabs.create({
                             url: RestartURI
                         });
                     }
                 } else {
+					chrome.storage.sync.set({
+						restarted: true
+					});
                     chrome.tabs.create({
                         url: RestartURI
                     });
@@ -321,5 +349,6 @@ var restartmychrometimer = {
 
 document.addEventListener('DOMContentLoaded', function() {
     document.removeEventListener('DOMContentLoaded');
+	restartmychrome.init();
     restartmychrometimer.init();
 });
