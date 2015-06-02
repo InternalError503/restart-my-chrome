@@ -128,7 +128,7 @@
     "description":"Test for clear data restart confirmation"
   },
   "appOptionsEnableTimedRestart": {
-    "message": "Enable automatic restart at set interval.", 
+    "message": "Enable automatic restart at set interval. (on|off)", 
     "description":"Enable automatic restart options label"
   },
   "appOptionsRestartTimeHour": {
