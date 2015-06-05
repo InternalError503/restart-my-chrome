@@ -194,5 +194,13 @@
   "appCancelButton": {
     "message": "Cancel", 
     "description":"label for cancel button"
+  },
+  "appCancelStartButton": {
+    "message": "Start", 
+    "description":"label for start button"
+  },
+  "appCancelStopButton": {
+    "message": "Stop", 
+    "description":"label for stop button"
   }
 }

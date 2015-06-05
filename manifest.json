@@ -24,7 +24,8 @@
 				"tabs", 
 				"notifications", 
 				"browsingData", 
-				"storage" 
+				"storage", 
+				"contextMenus" 
 		],
 		"version": "1.9"
 }

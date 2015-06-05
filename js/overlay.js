@@ -47,6 +47,33 @@ var restartmychrome = {
 				}
 			}
 		});
+			chrome.contextMenus.create({
+				  title: chrome.i18n.getMessage("appCancelRestartNowButton"),
+				  id: "contextRestartNow",
+				  contexts: ["browser_action"],
+				  onclick: function() {
+					restartmychrome.browserRestart();
+				  }
+			});
+			chrome.contextMenus.create({
+				  title: chrome.i18n.getMessage("appCancelStartButton"),
+				  id: "contextStart",
+				  contexts: ["browser_action"],
+				  onclick: function() {
+					restartmychrometimer.onChange();
+				  }
+			});
+			chrome.contextMenus.create({
+				  title: chrome.i18n.getMessage("appCancelStopButton"),
+				  id: "contextCancel",
+				  contexts: ["browser_action"],
+				  onclick: function() {
+					restartmychrometimer.timedRestart("", false, 0);
+					chrome.browserAction.setBadgeText({
+						text: ""
+					});
+				  }
+			});
 	},	
 
     //Restart event
