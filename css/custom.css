@@ -11,3 +11,6 @@
     height: 145px;
     width: 385px;
 }
+html {
+	-webkit-user-select: none;
+}
