@@ -20,6 +20,11 @@
 	"background": {
       "scripts": [ "js/overlay.js" ]
 	},
-		"permissions": [ "tabs", "notifications", "browsingData", "storage" ],
-		"version": "1.8"
+		"permissions": [ 
+				"tabs", 
+				"notifications", 
+				"browsingData", 
+				"storage" 
+		],
+		"version": "1.9"
 }
