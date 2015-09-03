@@ -7,6 +7,15 @@ Source Code Repository For Restart My Chrome
 
 Source code released under [MIT License](http://opensource.org/licenses/MIT)
 
+
+#### IMPORTANT: 
+As of chrome version 46, They have removed access to chrome:restart in content scripts 
+learn more [here](https://goo.gl/deTVT2) this means __Restart My Chrome will no longer work__, 
+If you don't like this change by google please add your comment to the above URL maybe 
+voicing your frustrations over this change will allow them to create an alternative API that 
+allows restarting of chrome in extensions.
+
+
 #### What it does: 
 Allows users to easily restart `Chrome web browser`
 
