@@ -101,7 +101,7 @@
 			//Important: setRestartTime can't be less then 1 minute (denial of service loop)
 			$('#setRestartTime').change(function() {
 				if(document.getElementById('setRestartTime').value > 0){
-					forgetitoptions.forget_save_options();
+					restartmychromeoptions.rmc_save_options();
 				}else{
 					document.getElementById('setRestartTime').value = 1;
 				}	
