@@ -336,8 +336,8 @@ var restartmychrometimer = {
                             });
                             restartmychrometimer.genWarning(true);
                         }
-                        //If using minute show badge in last 30 seconds.
-                        if (timer <= 30 && aFilter == 2) {
+                        //If using minute show badge in last 45 seconds.
+                        if (timer <= 45 && aFilter == 2) {
                             chrome.browserAction.setBadgeText({
                                 text: seconds.toString()
                             });

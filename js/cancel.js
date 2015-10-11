@@ -50,6 +50,9 @@
 						chrome.browserAction.setBadgeText({
 							text: ""
 						});
+						chrome.storage.sync.set({
+							timedRestart: false
+						});
 						window.close();
 					} catch (e) {
 						alert("An error was encountered while triggering the cancel button click event " + e);
