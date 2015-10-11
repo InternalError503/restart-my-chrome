@@ -98,15 +98,6 @@
                 });
 	        });
 
-			//Important: setRestartTime can't be less then 1 minute (denial of service loop)
-			$('#setRestartTime').change(function() {
-				if(document.getElementById('setRestartTime').value > 0){
-					forgetitoptions.forget_save_options();
-				}else{
-					document.getElementById('setRestartTime').value = 1;
-				}	
-			});			
-			
 	        //Save settings as they are changed.	
 	        $("#enableConfirm, #enableConfirmData, \
 			#clearDataFrom, #enableClearingData, \
@@ -118,7 +109,7 @@
 			#dataPasswords, #dataWebSQL, \
 			#enableTimedRestart, #timedRestartHour, \
 			#timedRestartMinute, #timedRestartTime, \
-			#enableStartupPage").change(function() {
+			#setRestartTime, #enableStartupPage").change(function() {
 	            restartmychromeoptions.rmc_save_options();
 	        });
 
