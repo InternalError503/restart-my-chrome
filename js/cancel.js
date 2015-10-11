@@ -36,28 +36,30 @@
 	            document.getElementById('restartInMinutesLabel').textContent = chrome.i18n.getMessage("appCancelRestartInMinutes");
 	            document.getElementById('restartNowButton').textContent = chrome.i18n.getMessage("appCancelRestartNowButton");
 	            document.getElementById('cancelButton').textContent = chrome.i18n.getMessage("appCancelButton");
+				
+				document.getElementById('restartNow').addEventListener('click', function() {
+					try {
+						chrome.extension.getBackgroundPage().restartmychrome.browserRestart();
+					} catch (e) {
+						alert("An error was encountered while triggering the restart now button click event " + e);
+					}
+				});
+				document.getElementById('cancel').addEventListener('click', function() {
+					try {
+						chrome.extension.getBackgroundPage().restartmychrometimer.timedRestart("", false, 0);
+						chrome.browserAction.setBadgeText({
+							text: ""
+						});
+						window.close();
+					} catch (e) {
+						alert("An error was encountered while triggering the cancel button click event " + e);
+					}
+				});				
+				
 	        } catch (e) {
 	            alert("An error was encountered while initializing cancel.js " + e);
 	        }
 	    }
 	};
 
-	document.addEventListener('DOMContentLoaded', restartmychromecancel.init);
-	document.getElementById('restartNow').addEventListener('click', function() {
-	    try {
-	        chrome.extension.getBackgroundPage().restartmychrome.browserRestart();
-	    } catch (e) {
-	        alert("An error was encountered while triggering the restart now button click event " + e);
-	    }
-	});
-	document.getElementById('cancel').addEventListener('click', function() {
-	    try {
-	        chrome.extension.getBackgroundPage().restartmychrometimer.timedRestart("", false, 0);
-	        chrome.browserAction.setBadgeText({
-	            text: ""
-	        });
-	        window.close();
-	    } catch (e) {
-	        alert("An error was encountered while triggering the cancel button click event " + e);
-	    }
-	});
+restartmychromecancel.init();

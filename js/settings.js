@@ -128,6 +128,14 @@
 	            }
 	        );
 			
+			//Select|Deselect buttons
+			$('#sAll').click(function(){
+				restartmychromeoptions.rmc_toggledata_options(true);
+			});
+			$('#dAll').click(function(){
+				restartmychromeoptions.rmc_toggledata_options(false);
+			});
+			
 			$("#startupPageURLClear").click(function() {
 				$('#startupPageURL').val("");
 				restartmychromeoptions.sendNotification("danger", "Cleared", "<i class='uk-icon-times'></i>", true);
@@ -274,11 +282,8 @@
 		}	
 
 	};
-
-	document.addEventListener('DOMContentLoaded', restartmychromeoptions.init);
-	document.getElementById('sAll').addEventListener('click', function() {
-	    restartmychromeoptions.rmc_toggledata_options(true);
-	});
-	document.getElementById('dAll').addEventListener('click', function() {
-	    restartmychromeoptions.rmc_toggledata_options(false);
-	});
+	
+document.addEventListener('DOMContentLoaded', function() {
+	document.removeEventListener('DOMContentLoaded');
+	restartmychromeoptions.init();
+});
