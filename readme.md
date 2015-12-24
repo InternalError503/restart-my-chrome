@@ -1,7 +1,7 @@
 Restart My Chrome
 ========
 
-Download the extension from [Google Web Store] (https://chrome.google.com/webstore/detail/restart-my-chrome/poifblphedfakpplnemomhgkhhpkpkla) 
+Download the extension from [Google Web Store] NO LONGER AVAILABLE IN GOOGLE WEBSTORE
 
 Source Code Repository For Restart My Chrome
 
@@ -40,7 +40,7 @@ Currently supports the following locales
 - More to come...
 
 ### History:
-We brought you [restart my fox] (https://addons.mozilla.org/en-US/firefox/addon/restart-my-fox), Now we bring you [restart my chrome] (https://chrome.google.com/webstore/detail/restart-my-chrome/poifblphedfakpplnemomhgkhhpkpkla).
+We brought you [restart my fox] (https://addons.mozilla.org/en-US/firefox/addon/restart-my-fox), Now we bring you [restart my chrome] NO LONGER AVAILABLE IN GOOGLE WEBSTORE.
 
 ### Clear Browser Data:
 
